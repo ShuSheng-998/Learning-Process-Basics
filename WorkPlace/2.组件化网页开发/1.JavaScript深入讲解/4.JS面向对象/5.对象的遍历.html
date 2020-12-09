@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的遍历</title>
+</head>
+
+<body>
+    <script>
+        /* 1.遍历json数据定义方式的对象 */
+        function test() {};
+        test.prototype = {
+            color: "red",
+            heights: "1.7",
+            width: "20",
+            showInfo: function () {
+                alert(this.color + "---" + this.heights + "---" + this.width);
+            }
+        }
+        for(var p in test.prototype){
+            //in返回的是test.prototype里属性和方法的名字自字符串，赋给p
+            console.log(p);
+        }
+        /* 2.遍历字面式和new object方式定义的的对象 */
+        var person = {
+            name:"卢本伟",
+            age: 18,
+            len:180,
+            demo:function(){
+                console.log("卢本伟牛逼");
+            }
+        }
+        for(var p in person){
+
+        }
+        /* 3.遍历构造函数定义的对象 */
+        function person_2(name,sex,age){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.show=function(){}
+         }
+         var obj_1=new person_2("大司马","男",18);
+         //需实例化一个对象后才能在此对象上遍历
+         for(var p in obj_1){
+             console.log(obj_1[p]);
+         }
+         
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number,isNaN,数值类型转换</title>
+</head>
+<body>
+    <script>
+        var name;                
+        name="卢本伟"
+        var age=26;
+        var email="LBW@sina.com.cn";
+        var adress;  
+        var id="16"
+        console.log(age-"abc");  /* 本因返回数值类型的值，但abc不是数值，导致最后结果不是数值类型，所以会打印NaN(一种特殊的数值类型)。
+                                    1.任何设计NaN的操作，处理结果都为NaN
+                                    2.NaN与任何值都不相等，包括本身
+                                 */
+
+        console.log(isNaN(age));
+
+        console.log(isNaN(id)); //isNaN()对接受的数值，先尝试转换为数值类型，再检测是否为数值类型
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js对象关键词</title>
+</head>
+<body>
+    <script>
+    /* 1.instanceof:变量是否是某一对象的实例 */
+        var arr=new Array();
+        console.log(arr instanceof Array);
+
+    /* 2.delete:删除对象的属性
+                (1)不能删除对象的方法
+                (2)不能删除变量
+                (3)不能删除原型链中的属性
+          */
+         function fun(){
+             this.name="卢本伟";
+             this.say=function(){
+                 alert(this.name);
+             }
+         }
+         fun.prototype.test="PDD";
+         var obj =new fun();
+         console.log(obj.name);//卢本伟
+         delete obj.name;
+         console.log(obj.name);//undefined
+         console.log(obj.test);
+         delete obj.test;//不能删除
+         /* delete obj.prototype.test;错误调用 */
+         console.log(obj.test);
+    /* 3.callee:返回正在执行的function对象，即函数本身function的内容
+                (1)调用  arguments.callee
+                (2)把其当作一个属性
+         */ 
+    /* 4.this
+        */ 
+
+     //(1)this可以在函数内部定义属性/变量(定义的是全局变量)
+         var x = 1;
+         function test(){
+             this.x = 0;
+         }
+         test();
+         console.log(x);
+     //(2)作为构造函数调用--》构造函数内this指向当前对象
+     function person(){
+         this.name="大司马";
+         this.age=18;
+     }
+     var p=new person();
+     console.log(p.name);
+     //(3)
+    </script>
+</body>
+</html>

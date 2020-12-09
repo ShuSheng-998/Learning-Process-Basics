@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>split和replace</title>
+</head>
+<body>
+    <script>
+         /*              split()
+            语法：stingObject.split(separator)
+            功能：把一个字符串分割成字符串数组
+            说明：1.separator(必需),分隔符               
+       */
+       var str="welcom-to-beijing"
+       var arr=str.split("-");
+       var date="2020/10/20";
+       var dateArr=date.split("/");
+       console.log(arr);
+       console.log(dateArr);
+
+        /*              replace()
+            语法：stingObject.replace(regexp/substr,replacement)
+            功能：在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串,不会更改旧字符串(只会替换第一个)
+            返回值：string，返回新的修改后的字符串
+            参数:1.regexp(必需)。规定子字符串或要替换的模式的RegExp对象(需要被替换的东西)
+                 2.replacement(必须)。一个字符串值              
+       */
+       var  tel="010-62971268,4000-1000-9098,010-8056-9984";
+       var newtel=tel.replace(',','  ');
+       console.log(newtel);
+    </script>
+</body>
+</html>

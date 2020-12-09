@@ -1,0 +1,12 @@
+a:link{color:blue}
+a:visited{color:gray}
+a:hover{color: green;}
+a:active{color:orange}
+
+p:hover{color:greenyellow}
+p:active{font-size: 30px;}
+
+a.one:link{color:blue;font-size: 30px;}
+a.one:visited{color:gray;font-size: 30px;}
+a.one:hover{color: green;font-size: 30px;}
+a.one:active{color:orange;font-size: 30px;}

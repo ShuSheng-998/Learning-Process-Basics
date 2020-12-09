@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录与注册</title>
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css">
+</head>
+<body>
+    <div class="register">
+        <p class="title" id="title">
+            <span>登录</span>
+            <span class="current">注册</span>
+        </p>
+        <div class="form">
+            <div>
+                <span>+86</span>
+                <input type="text" id="user" name="user" placeholder="请输入手机号" autocomplete="off">
+                <i id="user-icon"></i>
+                <span class="info" id="user-info"></span>
+            </div>
+            <div>
+                <input type="password" id="pwd" name="password" placeholder="请设置密码">
+                <i id="pwd-icon"></i>
+                <span class="info" id="pwd-info"></span>
+            </div>
+            <p class="button">
+                <a href="javascript:void(0)" id="sign-up" class="btn">注册</a>
+            </p>
+        </div>
+    </div>
+    <script src="../JS/ajax.js" type="text/javascript"></script>
+    <script src="../JS/user.js" type="text/javascript"></script>
+</body>
+</html>

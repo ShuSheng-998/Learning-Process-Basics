@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp对象的实例方法</title>
+</head>
+<body>
+    <!-- 用new RegExp()创建 \ 时 ，需要四个\，即new RegExp("\\\\") -->
+    <script>       
+    /*RegExp的实例方法之模式转换符 */
+       /*  1. g:全局匹配：
+            lastIndex属性：
+                pattern有一个lastIndex属性，每次匹配完后(如果有全局匹配符),
+                lastIndex都在匹配到的字符串的后一个字符上，下次匹配就从这里开始。
+                当到最后时，lastIndex就找不到了(为null)，再次匹配就会返回null。
+                下次匹配时，就会将lastIndex重置。
+       */
+    var str = "js js js";
+    var pattern = /js/g;
+    console.log(pattern.exec(str));//匹配到第一个js，然后lastIndex置于js后的字符(这里是空格)
+    console.log(pattern.exec(str));//从lastIndex开始匹配，匹配到第二个js，然后lastIndex置于第二个js后的字符(这里是空格)
+    console.log(pattern.exec(str));//从lastIndex开始匹配，匹配到第三个js，然后lastIndex置于第三个js后的字符(这里为空，因为后面没了)
+    console.log(pattern.exec(str));//从lastIndex开始匹配，匹配到空，返回空，lastIndex重置
+    console.log(pattern.exec(str));//匹配到第一个js，然后lastIndex置于js后的字符(这里是空格)
+        /*  2. tostring方法：
+            说明：返回pattern的字面量形式的字符串
+            3.valueOff方法：
+            说明：返回自己本身
+        */
+    var pattern_2 = new RegExp("a\\nb");
+    console.log(pattern_2.toString());
+    </script>
+</body>
+</html>

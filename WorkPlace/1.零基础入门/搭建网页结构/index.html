@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWW.WDNMD.COM</title>
+</head>
+<body>
+    <!--div标签-->     <!--块级标签：占据一行，在新创建时需换行-->
+    <div><img src="img/silly.jfif"/>我傻了</div>
+    <div><img src="img/pain.jfif"/>我炸了</div>
+    <div><img src="img/alcohol.jfif"/>这酒真不错</div>
+
+    <!--span标签-->    <!--行内标签：在一行，新创建一行未满时不换行-->
+    <span><img src="img/silly.jfif"/>我傻了</span>
+    <span><img src="img/pain.jfif"/>我炸了</span>
+    <span><img src="img/alcohol.jfif"/>这酒真不错</span>
+
+    <!--标签嵌套规则-->
+    <!--块级元素可包含行内元素和某些块级元素-->
+    <div><h1></h1><a href></a></div>
+
+    <!--行内元素不能包含块级元素，只能包含其他行内元素-->
+    <a href=""><h1></h1><div></div></a>   <!--错误-->
+    <span><em><i></i></em></span>         <!--正确-->
+
+    <!--块级元素不能放在p标签内-->
+    <p><div></div><h1></h1></p>
+
+    <!--一些特殊的块级元素只能包含行内元素，不能再包含块级元素
+        如<h1>家族、p、dt-->
+
+    <!--块级元素与块级元素并列，行内元素与行内元素并列-->
+    <div><h1></h1><p></p></div>                 <!--正确-->
+    <div><span></span><a href=""></a></div>     <!--正确-->
+    <div><h1></h1><span></span></div>           <!--错误-->
+</body>
+</html>

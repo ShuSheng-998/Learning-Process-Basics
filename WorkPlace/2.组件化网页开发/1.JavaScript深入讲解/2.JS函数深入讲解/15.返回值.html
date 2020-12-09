@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么作为返回值</title>
+</head>
+<body>
+    <script>
+        /* 1.什么都不返回 */
+            function fn(){
+                return;
+            }
+        /*  2.数字 */
+        function add(){
+            return 1;
+        }
+       /*  3.字符串 */
+       function str(){
+           return 'hello';
+       }
+       /* 4.布尔值：常用于表单验证 */
+       if(用户名不存在){
+           return true;
+       }else{
+           return flase;
+       }
+      /*  5.null */
+
+      /*  6.数组 */
+      function add_2(num1,num2){
+        return [num1+num2,num1,num2];
+      }
+      /* 7.对象 */
+      function getPerson(){
+          return {
+              name:"xm",
+              age:18
+          };
+      }
+      /* 8.函数 */
+      function fn(){
+          return function(arguments){
+              console.log(10);
+          };
+      }
+      fn()();//调用时
+      /* 或者 */
+      var newFn=fn();
+      newFn(); 
+    </script>
+</body>
+</html>

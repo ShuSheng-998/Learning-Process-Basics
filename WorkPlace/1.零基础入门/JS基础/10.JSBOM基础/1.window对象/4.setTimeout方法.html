@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- JavaScript是单线程语言，所执行的代码必须按照顺序 -->
+
+      <!--        setTimeout方法
+        1.语法：setTimeout(code,millisec)
+        2.功能：在指定的毫秒数后调用函数或计算表达式
+        3.参数说明
+            (1)code:要调用的函数或要执行的JavaScript代码串
+            (2)millisec:在执行代码前需等待的毫秒数
+        4.返回值：返回一个ID值，通过他来取消超时调用
+    -->
+    
+      <!--        clearTimeout方法
+        1.语法：clearTimeout(id_of_setTimeout)
+        2.功能：取消由setTimeout方法设置的timeout
+        3.参数说明
+            (1)id_of_setTimeout：由setTimeout返回的ID值，该值标识要取消的延迟执行块
+    -->
+    <script>
+        /* setTimeout(function(){
+            alert("卢本伟牛逼");
+        },2000) */
+        var fnCall=function(){
+            alert("卢本伟牛逼");
+        }
+        var timeOut=setTimeout(fnCall,2000);
+        //取消setTimeout设置的代码块
+        clearTimeout(timeOut); 
+    </script>
+</body>
+</html>

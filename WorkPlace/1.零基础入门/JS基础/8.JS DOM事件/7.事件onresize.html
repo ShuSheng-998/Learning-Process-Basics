@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+      <!--                onresize事件的用处
+            1.在调整浏览器窗口大小时触发 
+     -->
+
+     <!--                onscroll事件的用处
+            1.在拖动滚动条滚动时触发
+     -->
+     <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #abcdef;
+            overflow: auto;             /* overflow=auto自动添加滚动条 */
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+        <p>拖动</p>
+    </div>
+    <script>
+        //浏览器窗口尺寸发生改变时
+        var box=document.getElementById("box");
+        window.onresize=function(){
+            console.log("我的尺寸改变了");
+        }
+        //拖动滚动条的时候
+        window.onscroll=function(){
+            console.log("窗口被拖动了")
+        }
+        box.onscroll=function(){
+            console.log("我是div的滚动条，也被拖动了")
+        }
+    </script>
+</body>
+</html>

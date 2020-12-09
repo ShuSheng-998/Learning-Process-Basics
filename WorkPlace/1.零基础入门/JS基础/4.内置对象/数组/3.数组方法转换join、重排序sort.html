@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组转换join和重排序reverse,sort</title>
+</head>
+<body>
+    <script>
+        //join,用以把数组中的所有元素转换成多个字符串，返回值为转换后的字符串
+        var num=[2,4,5];
+        var str=num.join();            /*  不填参数时，默认以逗号为分隔符 */
+        console.log(str);
+        var word=["border","left","color"];     
+        var wordstr=word.join("-");
+        console.log(wordstr);
+
+
+        //reverse,颠倒数组中元素的顺序，返回值为数组
+        num.reverse();
+        console.log(num);
+        /* 返回dcba字符串 */
+        var str_2=["a","b","c","d"];
+        var strBack=str_2.reverse().join("");
+        console.log(strBack);
+
+
+        //sort,按首字母(首数字)为规则进行排序
+        var arr=[22,78,44,9,5,87];
+        /* 降序排列 */
+        arr.sort(function(a,b){return b-a});
+        console.log(arr);
+        /* 升序排列 */
+        arr.sort(function(a,b){return a-b});
+        console.log(arr);
+    </script>
+</body>
+</html>

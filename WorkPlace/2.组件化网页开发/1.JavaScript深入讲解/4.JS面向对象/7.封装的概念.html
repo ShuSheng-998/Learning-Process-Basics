@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装的概念</title>
+</head>
+<body>
+    <script>
+        /* 在某个方法内部有一个定义的局部数据n，添加一个方法test使其可以操作这个n，再在外面的方法下return这个test
+            实现了外部可以调用局部的变量，即封装的概念。
+         */
+        function demo(){
+            var n = 1;
+            function test(){
+                return ++n;
+            }
+            return test;
+        }
+        var at=demo();
+        console.log(at);
+        alert(at());
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS中的对象</title>
+</head>
+
+<body>
+    <script>
+        {
+            var cat = {
+                name: "Tom",
+                age: 4,
+                family: ["mother", "father"],
+                speak: function () {
+                    console.log("喵喵！");
+                },
+                friend: {
+                    name: "jerry",
+                    age: 4
+                }
+            }
+        };
+       cat.type="中华狸花猫";
+       console.log(cat.type);
+       delete cat.type;//删除属性
+       console.log(cat.type);
+       console.log("name" in cat);//查找对象中是否有属性name
+        console.log("分割符")
+       //遍历cat中的所有属性和方法
+       for(var p in cat){//in 返回的是cat里属性的字符串
+           console.log(p);
+           console.log(cat[p]);//数组方式，[]里填的就是属性的字符串形式
+       }
+    </script>
+</body>
+
+</html>

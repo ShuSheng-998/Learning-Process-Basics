@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择、分组及引用</title>
+</head>
+<body>
+    <script>
+    /* 选择：|号(可以理解成或)*/
+        var str = "html css js";
+        var pattern = /css|html|js/;
+        console.log(pattern.exec(str));
+        /* 在待匹配地字符串中按顺序在pattern中查找，找到了就结束，所以先匹配到a就结束了 */
+        var str_2 = "ab"
+        var pattern_2 = /a|ab/;
+        console.log(pattern_2.exec(str_2));
+
+    /* 分组：()号如(ab)+对ab匹配一个或多个
+            (1)默认会添加()中地内容返回在字符串数组中       (调用地exec()方法)
+            (2)括号嵌套时，由外到里返回
+            (2)(?:ab),不会再执行(1)
+            */
+        var str_3 = "abababba";
+        var pattern_3 = /(ab)+/;
+        console.log(pattern_3.exec(str_3));
+    /* 对分组的引用
+            (1)对前面分组的引用不会多返回分组的字符
+        */
+
+        /* 例1 */
+        var str_4="ab cd ab";
+        var pattern_4 = /(ab) cd \1/;//    \1就是对第一个分组的引用
+        console.log(pattern_4.exec(str_4));
+
+        /*  例2    在html中的运用
+            要获得在任意标签内的一段内容
+            */
+        var str_5="<p><a>这是一段文字</a></p>";
+        var pattern_5 = /<([a-zA-Z]+)>(.*?)<\/\1>/;
+        console.log(pattern_5.exec(str_5));
+    </script>
+</body>
+</html>

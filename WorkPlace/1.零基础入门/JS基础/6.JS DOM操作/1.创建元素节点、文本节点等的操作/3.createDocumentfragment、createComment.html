@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        myReady(function(){
+            var commet=document.createComment("A comment");     /* 创建注释节点 */
+            var fragment=document.createDocumentFragment();         /* 创建文本块节点 */
+            var ul=document.getElementById("mylist");
+            var li=null;
+            for(var i=0;i<3;i++){
+                li=document.createElement("li");
+                li.appendChild(document.createTextNode("item "+(i+1))); /* 在li下创建TextNode子结点 */
+                fragment.appendChild(li);
+            }
+            ul.appendChild(fragment);
+            document.body.insertBefore(commet,document.body.firstChild);
+        })
+    </script>
+</head>
+<body>
+     <ul id="mylist"></ul>
+</body>
+</html>

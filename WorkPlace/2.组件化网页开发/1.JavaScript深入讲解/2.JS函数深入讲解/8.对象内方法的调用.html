@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.onclick=function(){
+            console.log("你点击了页面");
+        }
+        document.onclick();
+        /* 当再对象中声明了非法字符的方法时怎样调用 */
+        var operation = {
+            "@":function(){
+                console.log("@")
+            }
+        }
+        console.log(operation["@"]);
+        /* 链式调用 */
+        /* operation.fn_1().fn_2(); */
+    </script>
+</body>
+</html>

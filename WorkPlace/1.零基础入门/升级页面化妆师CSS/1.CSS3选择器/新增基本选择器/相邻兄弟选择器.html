@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相邻兄弟选择器</title>
+    <style>
+        section>div+article{            /*相邻兄弟选择器可以选择紧接在另一元素后面的元素，而且他们具有一个相同的父元素 */
+            color: red;               /* 语法格式： 元素+兄弟相邻元素（Element+Sibling） */
+        }                   
+    </style>
+</head>
+<body>
+    <section>
+        <div>section下的div</div>
+        <article>
+            <div>article下的div</div>
+        </article>
+        <article>
+            <div>article下的div</div>
+        </article>
+    </section>
+</body>
+</html>

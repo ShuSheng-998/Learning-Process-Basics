@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        myReady(function(){
+           var content=document.getElementById("content");
+           console.log(content.outerHTML); /*  打印出的内容包含外层的div，若是innerHTML则不包含 */
+                                           /*  给outerHTML赋新值会覆盖之前的全部节点 */
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <p>This is a <strong>paragraph</strong>with a list follow it</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+</body>
+</html>

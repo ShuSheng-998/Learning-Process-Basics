@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算术操作符</title>
+</head>
+<body>
+    <script>
+      var string_1="Hello ";
+      var num_1=100;
+      var string_2="world";
+      string_1=string_1+string_2;
+      string_2=string_2+num_1
+      console.log(string_1);        /* 当+号的两边有任何一方为字符串时+起到了作用就是链接 */
+      console.log(string_2);
+
+      console.log((string_1==string_2));
+
+      var num_2=100;
+      console.log((num_1===num_2));     /* ===   比较值的同时比较数据类型 */
+      console.log(null==undefined);     /* undefined派生于null，但===为false */
+
+      var score=80;
+      var result=(score>=60)?"及格":"不及格";
+      console.log(result);
+    </script>
+</body>
+</html>

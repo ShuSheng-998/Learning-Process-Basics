@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        div::before{
+            content: "我在内容的前面";      /* 在浏览器中不可选中 */
+        }
+    </style>
+</head>
+<body>
+    <!--在元素的内容前面插入新的内容-->
+    <!--常用content配合使用-->
+    <div>伪元素</div>
+
+    <!--
+        1.永远是div(父元素)的第一个子元素
+        2.是行级元素、
+        3.内容通过content写入
+        4.可在其中编写其css样式，如增加background-color或者转换成块级元素
+        5.html标签中找不到对应的标签，只在浏览器中可找到，但也无法在浏览器视口下选中
+    -->
+</body>
+</html>

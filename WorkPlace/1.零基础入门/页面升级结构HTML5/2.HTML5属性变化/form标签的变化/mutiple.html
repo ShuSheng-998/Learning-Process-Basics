@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autofocus</title>
+</head>
+<body>
+    <form action="./autocomplete.html" autocomplete="on">
+        <input type="file" name="file" multiple="multiple">      <!--选择文件时，按住ctrl可选中读个-->
+        <input type="email" name="email" autocomplete="off" multiple="multiple" placeholder="请输入邮箱地址">
+        <!--填写邮箱地址时，在邮箱地址间添加','，后台可形成邮箱地址数组发往后端-->
+        <input type="submit">
+    </form>
+</body>
+</html>

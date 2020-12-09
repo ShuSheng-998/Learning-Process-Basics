@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        myReady(function(){
+           var content=document.getElementById("content");
+           console.log(content.innerText);
+            /* 可以操作元素中包含的所有文本内容，包括子文档树中的文本
+                1.火狐中，此属性为textContent
+             */
+             function getInnerText(element){
+                 return (typeof content.textContent=="string")? element.textContent:element.innerText;
+             }
+             function setInnerText(element,text){
+                 if(typeof element.textContent=="string"){
+                     element.textContent=text;
+                 }else{
+                     element.innerText=text;
+                 }
+             }
+             setInnerText(content,"hello word!");
+             console.log(getInnerText(content));
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <p>This is a <strong>paragraph</strong>with a list follow it</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+</body>
+</html>
+可以操作元素中包含的所有文本内容，包括子文档树中的文本

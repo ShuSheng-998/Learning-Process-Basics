@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=utf-8"/>
+        <title>WWW.WDNMD.COM</title>
+    </head>
+<body>
+    
+    <table border="6" width="500" bgcolor="f2f2f2" cellspacing="0" cellpadding="10px" align="center" >
+        <!--cellspacing单元格间的间距，cellpadding单元格内容与单元格的间距-->
+        <caption>WDNMD</caption>
+        <thead>
+        <tr bgcolor="#d8e4bc"><!--bgcolor三种方式，直接颜色（red），rgb（，，），#+十六进制-->
+            <th rowspan="2">城市</th>
+            <th colspan="2">2014</th><!--列合并，相当于前面的第一个占用了后面的所有列方向的单元格，应添加colspan属性（占几列，数值为几）然后删除后面列的对应单元格-->
+            <th rowspan="2">2015</th><!--行合并，相当于前面的第一行占用了后面的所有行的单元格，应添加rowspan属性（占几行，数值为几）然后删除后面行的对应单元格-->
+            <th rowspan="2">2016</th>
+        </tr>
+        <tr bgcolor="d8e4bc">
+            <th>上半年</th>
+            <th>下半年</th>
+        </tr> 
+        </thead>
+        <tbody align="center" valign="middle"><!--将单元格内容改变，align水平方向的对其方式,valign垂直方向的对其方式-->
+                                              
+        <tr>
+            <td bgcolor="b8cce4">北京</td>
+            <td>8000</td>
+            <td>8000</td>
+            <td>10000</td>
+            <td>16000</td>
+        </tr>
+        <tr>
+            <td bgcolor="b8cce4">上海</td>
+            <td>7000</td>
+            <td>9000</td>
+            <td>12000</td>
+            <td>18000</td>
+        </tr>
+    </tbody>
+        <tfoot>
+        <tr align="center" valign="middle">
+            <td height="30px" bgcolor="b8cce4">合计</td>
+            <td>7000</td>
+            <td>9000</td>
+            <td>12000</td>
+            <td>18000</td>
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

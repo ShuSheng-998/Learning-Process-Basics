@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript面向对象概述</title>
+    <!--                基于原型的面向对象
+    其中对象(object)是依靠构造器(constuctor)利用原型(prototype)构造出来的 -->
+</head>
+<body>
+    <script>
+        //Object是所有对象的父对象
+        function fn(){
+
+        }
+        console.log(fn.prototype);/* fn.prototype ---》 内存地址---》存储一个对象 */
+        /* 所有的函数都是一个Object对象 */
+
+        //构造函数对象
+        //用函数构造器创建函数对象，效率低，函数参数顺序不可变
+        var obj =new Function(var1,var2,functionbody());
+    </script>
+</body>
+</html>

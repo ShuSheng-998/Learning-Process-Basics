@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数的继承</title>
+</head>
+<body>
+    <script>
+        /* 构造函数的继承
+            1.所有的属性和方法都将被传递到子对象中
+         */
+        function parents(name){
+            this.name=name;
+            this.say = function(){
+                console.log("父亲的名字是"+this.name);
+            }
+        }
+        parents.prototype.eat="amumum";
+        function child(name,age){//继承parent
+            this.pObj = parents;//子对象的参数name传递到父对象中
+            this.pObj(name);
+            this.prototype=parents.prototype;
+            this.age = age;
+            this.sayC = function(){//当say覆盖了父亲的say时调用child的say方法就调用自己的
+                console.log("child:"+this.name+"---"+"age:"+this.age);
+            }
+        }
+
+        var p = new parents("卢本伟");
+        p.say(); 
+        console.log("父类的"+p.eat);
+        var c = new child("大司马",20);
+        c.sayC();
+        console.log(c.eat);
+    </script>
+</body>
+</html>

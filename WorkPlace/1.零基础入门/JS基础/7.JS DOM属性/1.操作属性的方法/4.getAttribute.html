@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttributes</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        /*              getAttributes的特点
+            1.getAttribute("")获取某个自定义属性或固有属性
+            2.属性名最后都会被转化为小写(不区分大小写)
+            3.返回的是属性
+            4.
+                (1)div.getAttribute("style")和div.style获取的值不同，即getAttribute访问的是自定义属性，style是访问的固有属性
+                (2)div.getAttribute("Onclick")和div.OnClick获取的值不同,即getAttribute特访问的是自定义属性，Onclick返回函数对象
+        */
+        myReady(function () {
+         var div=document.querySelector("div");
+
+        div.innerHTML="属性操作方法";
+        console.log(div.innerHTML);
+
+        console.log(div.getAttribute("url"));
+        });
+    </script>
+</head>
+<body>
+    <div url="http://www.baidu.com" xxx="aaa" Yyy="bbb" qqq="ccc" style="color: #abcdef;"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用的字符类</title>
+</head>
+<body>
+    <script>
+        /* 1. 小数点：对 待匹配的 字符串的每个字符按顺序 在除了换行符的所有字符中进行匹配 */   
+        var str_1="3.1415926";
+        var pattern_1 = /./;
+        console.log(pattern_1.exec(str_1));
+        /* 2. \w(所有字母和数字包括常用符号，如@，_)：对 待匹配的 字符串的每个字符按顺序 在[a-zA-Z0-9@_]等中的所有字符中进行匹配 */  
+        var str_2="_lbwnb2020";
+        var pattern_2 = /\w/;
+        console.log(pattern_2.exec(str_2));
+        /* 3. \d(0-9的所有数字)：对 待匹配的 字符串的每个字符按顺序 在[0-9]中的所有字符中进行匹配 */  
+
+        /* 4. \s(空格和tab键))：对 待匹配的 字符串的每个字符按顺序 在空格和tab键中的两个字符中进行匹配 */  
+        var str="   ";
+        var pattern = /\s/;
+        console.log(pattern.exec(str));
+
+    </script>
+</body>
+</html>

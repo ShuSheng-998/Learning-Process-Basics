@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .word{word-spacing: 10px;}          /* 设置元素内单词间的间距 */
+        .letter{letter-spacing: 10px;}      /* 设置元素内字母间的间距 */
+
+        .one{text-transform: capitalize;}   /* 首字母大写 */
+        .two{text-transform: uppercase;}    /* 全大写 */
+        .three{text-transform: lowercase;}  /* 全小写 */
+        .four{text-transform: none;}        /* 不做改变 */
+
+        .a{text-decoration:underline;}
+        .b{text-decoration: overline;color:crimson;}
+        .c{text-decoration: line-through;}
+        .d{text-decoration: blink;}
+        a{text-decoration: none;}
+
+        span{color:coral;text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <a href="#">Css层叠样式</a>
+    <p>CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="word">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="letter">CSS层叠样式（Cascading Style Sheet）</p>
+
+    <p class="one">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="two">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="three">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="four">CSS层叠样式（Cascading Style Sheet）</p>
+
+    <p class="a">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="b">CSS层叠样式<span>（Cascading Style Sheet）</span></p>             <!--  text-decoration不具有继承关系 -->
+    <p class="c">CSS层叠样式（Cascading Style Sheet）</p>
+    <p class="d">CSS层叠样式（Cascading Style Sheet）</p>
+
+</body>
+</html>

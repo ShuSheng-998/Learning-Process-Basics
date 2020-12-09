@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨域</title>
+</head>
+<body>
+<!--                        跨域
+    1.同源策略
+        (1).同源：指域名、协议、端口均相同
+
+    2.跨域
+        (1)指从一个域名的网页去请求另一个域名的资源，严格的定义：只要域名、协议、端口有任何一个不同，就被当作是跨域  
+    3.解决跨域
+        (1)使用JSONP(常用)
+        (2)跨域资源共享(CORS)
+        (3)修改document.domain
+        (4)使用window.name
+-->
+
+<!--                        JSONP
+    1.什么是JSONP
+        JSONP是JSON with Padding(填充式JSON)的简写，是应用JSON的一种新方法，也是一种跨域解决方案
+    2.组成
+        (1)回调函数：当响应到来时应该在页面中调用的函数         
+        (2)数据：传入回调函数中的数据
+    3.原理
+        (1)直接用XMLHttpRequest请求不同域上的数据时，是不可以的，但是在页面上引入不同域上的js脚本文件却是可以的，jsonp正是利用这个特性
+        (2)通过script标签引入js文件- - - ->文件载入成功后- - - ->执行我们在url函数中指定的函数
+-->
+</body>
+</html>

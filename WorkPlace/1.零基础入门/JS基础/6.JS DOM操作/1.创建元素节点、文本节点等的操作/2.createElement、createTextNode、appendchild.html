@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create系列创建节点的方法</title>
+    <script src="./js/domready.js"></script>
+    <script>
+        myReady(
+            function(){
+                var ul=document.getElementById("mylist");   /* 获取body里的节点 */
+                var li=document.createElement("li");       /*  创建新节点 */
+                var txt=document.createTextNode("item");   /*  创建文本节点 */
+                ul.appendChild(li);                             /* 给某个节点增加子节点 */
+                li.appendChild(txt);                
+            }
+        );
+    </script>
+</head>
+<body>
+    <ul id="mylist"></ul>
+</body>
+</html>

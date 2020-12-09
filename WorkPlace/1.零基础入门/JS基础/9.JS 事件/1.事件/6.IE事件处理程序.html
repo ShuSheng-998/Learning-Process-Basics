@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE的事件处理程序</title>
+</head>
+<body>
+     <!--                      IE事件流 
+        添加事件：
+            attachEvent()
+        1.语法：element.attachEvent(event,function)
+        2.功能：用于向指定元素添加事件句柄。
+        3.参数：
+            (1)event必须。字符串，指定的事件名，必须加"on"前缀。
+            (2)function必须。指定事件触发时的函数。
+
+        移除事件
+            detachEvent()
+        1.语法：element.detachEvent(event,function)
+        2.功能：移除attachEvent添加的事件句柄。
+        3.参数：
+            (1)event必须。字符串，要移除的事件名。
+            (2)function必须。指定要移除的函数。
+
+    -->
+    <button id="btn">点我</button>
+    <script>
+        var btn_2=document.getElementById("btn");
+        btn.attachEvent("onclick",function(){
+            alert("Clicked");
+        });
+        btn.attachEvent("onclick",function(){
+            alert("二Clicked");     //先弹二
+        });
+        btn.detachEvent("onclick",clickme);
+        //this只想window
+        btn.attachEvent("onclick",function(){
+            alert(this===window);
+        })
+    </script>
+</body>
+</html>

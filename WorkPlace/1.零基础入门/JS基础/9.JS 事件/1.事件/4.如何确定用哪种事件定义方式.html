@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何确定用哪种事件定义方式</title>
+</head>
+<body>
+    <button id="btn_2">DOM2级事件的绑定</button>
+    <script>
+        /**
+         * 1.html元素中定义  
+               **html中写JS代码，强耦合，不利于复用代码   XXX       
+         * 2.DOM0级事件
+                **松耦合，虽然分离，但是有且只能绑定一个事件
+         * 3.DOM2级事件，通过addEventlistener函数绑定事件
+                **松耦合，可绑定多个事件，并实现事件捕获和事件冒泡
+        */
+        var btn_2=document.getElementById("btn_2");
+        btn_2.addEventListener("click",function(){
+            alert("DOM2级事件的绑定方式")
+        },false);
+        btn_2.addEventListener("click",function(){
+            alert("DOM2_1级事件的绑定方式")
+        },false);
+    </script>
+</body>
+</html>

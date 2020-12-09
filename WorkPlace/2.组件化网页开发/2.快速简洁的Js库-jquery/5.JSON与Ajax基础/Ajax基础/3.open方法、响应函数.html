@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open方法</title>
+</head>
+
+<body>
+    <!--                            open
+        1.语法:open(method,url,async)
+
+        2.功能:创建HTTP请求，规定请求的类型、URL及是否异步处理请求
+
+        3.参数：
+            (1)method:请求类型，GET或POST
+            (2)url:文件在服务器上的位置
+            (3)async:true(异步)   /   false(同步)
+
+        4.注意事项：
+            (1)open方法不会向服务器发送真正的请求，它相当于初始化请求，
+               并准备发送向同一个域中使用相同协议和端口的url发送请求，否则会因为安全原因报错
+
+            (2)url是open()方法中唯一一个必须要指定的参数，用来设置服务器上的地址，该文件可以是
+               任何类型的文件，如.txt和.xml,或者脚本文件，如.asp和.php
+
+        5.GET与POST的区别
+            与POST相比GET更简单也更快，并且在大部分情况下都能用。然而，在以下情况下必须使用POST
+            (1)无法使用缓存文件(更新服务器上的文件或数据库)
+            (2)向服务器发送大量数据(POST没有数据量限制)
+            (3)发送包含未知字符的用户输入时，POST比GET更稳定也更可靠
+
+        6.同步和异步的区别
+            (1)同步：提交请求->等待服务器处理->处理完毕返回    期间浏览器不能做任何事
+            (2)异步：请求通过事件触发->服务器处理(浏览器可以干自己的事)->处理完毕
+-->
+    <script type="text/javascript">
+        /* 封装通用的xhr对象 兼容各个版本 */
+        function createXHR() {
+            //判断浏览器是否将XMLHttpRequest作为本地对象实现，针对IE7,firefox,opera等
+            if (typeof XMLHttpRequest != undefined) {
+                return new XMLHttpRequest();
+            } else if (typeof ActiveXObject != undefined) {
+                //将所有可能出现的ActiveObject版本放在一个数组中
+                var xhrArr = ['Miscroft.XMLHTTP', 'MSXML2.XMLHTTP.6.0',
+                    'MSXML2.XMLHTTP.5.0', 'MSXML2.XMLHTTP.4.0',
+                    'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP.2.0'
+                ]
+                //遍历创建XMLHttpRequest对象
+                var len = xhrArr.length,
+                    xhr;
+                for (var i = 0; i < len; i++) {
+                    try {
+                        //创建XMLHttpRequest对象
+                        xhr = new ActiveXObject(xhrArr[i]);
+                        break;
+                    } catch (e) {};
+                }
+                return xhr;
+            } else {
+                throw new Error('No XHR Object availbel');
+            }
+        }
+        //XMLHttpRequest对象
+        var xhr = createXHR();
+        //响应XMLHttpRequest对象状态变化的函数,onreadystatechange在readystatechange属性发生改变时触发
+        xhr.onreadystatechange = function () {
+            // === 4,响应内容解析完成，可以在客户端调用
+            if (xhr.readyState === 4) {
+                //>=200才是异步真的调用成功，304表示请求资源没有被修改可以使用浏览器的缓存(上次的请求还在),404找不到页面，100还需请求
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    //获得服务器返回的数据
+                }
+            } 
+        }
+        //创建请求
+        xhr.open("get", "./server/slider.json", true);
+    </script>
+</body>
+
+</html>

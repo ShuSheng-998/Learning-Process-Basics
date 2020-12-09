@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send方法</title>
+</head>
+
+<body>
+    <!--                            send
+        1.语法:send(string)
+
+        2.功能：将请求发送到服务器
+
+        3.参数：
+            (1)string仅用于post请求
+            
+
+        4.注意事项：
+           (1)仅在POST请求时可以传入参数，不需要则发送null，在调用send方法之后请求被发往服务器
+
+        5.添加HTTP头
+            (1)如果需要向HTML表单那样POST数据，需使用setRequestHeader()来添加HTTP头，然后在send方法中规定需要发送的数据
+            (2)语法：xmlhttp.setRequestHeader(header,value)
+            (3)使用：xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlendoded");
+        6.设置响应HTTP请求变化的函数
+            在收到响应后相应数据会填充到XHR对象的属性，有四个相关属性会被填充：
+            (1)responseText——从服务器进程返回数据的字符串形式
+            (2)responseXML——从服务器进程返回的DOM兼容的文档数据对象
+            (3)status——从服务器返回的数字代码，如404(未找到)或200(已就绪)
+            (4)status Text——伴随状态码的字符串信息
+-->
+    <script type="text/javascript">
+        /* 封装通用的xhr对象 兼容各个版本 */
+        function createXHR() {
+            //判断浏览器是否将XMLHttpRequest作为本地对象实现，针对IE7,firefox,opera等
+            if (typeof XMLHttpRequest != undefined) {
+                return new XMLHttpRequest();
+            } else if (typeof ActiveXObject != undefined) {
+                //将所有可能出现的ActiveObject版本放在一个数组中
+                var xhrArr = ['Miscroft.XMLHTTP', 'MSXML2.XMLHTTP.6.0',
+                    'MSXML2.XMLHTTP.5.0', 'MSXML2.XMLHTTP.4.0',
+                    'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP.2.0'
+                ]
+                //遍历创建XMLHttpRequest对象
+                var len = xhrArr.length,
+                    xhr;
+                for (var i = 0; i < len; i++) {
+                    try {
+                        //创建XMLHttpRequest对象
+                        xhr = new ActiveXObject(xhrArr[i]);
+                        break;
+                    } catch (e) {};
+                }
+                return xhr;
+            } else {
+                throw new Error('No XHR Object availbel');
+            }
+        }
+        
+    /* 1.XMLHttpRequest对象 */
+        var xhr = createXHR();
+        
+    /* 2.响应XMLHttpRequest对象状态变化的函数,onreadystatechange在readystatechange属性发生改变时触发 */
+        xhr.onreadystatechange = function () {
+            // === 4,响应内容解析完成，可以在客户端调用
+            if (xhr.readyState === 4) {
+                //>=200才是异步真的调用成功，304表示请求资源没有被修改可以使用浏览器的缓存(上次的请求还在),404找不到页面，100还需请求
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    //获得服务器返回的数据
+                    console.log(xhr.responseText);
+                }
+            } 
+        }
+    /* 3.创建请求 */
+        xhr.open("get", "./server/slider.json", true);
+            //xhr.open("post", "./server/slider.json", true);
+    /* 4.发送请求 */
+        xhr.send(null);
+            //xhr.send({user:"LBw",id:16});
+            //设置http头部信息xhr.setRequestHeader("Content-type","application/x-www-form-urlendoded");
+    </script>
+</body>
+
+</html>

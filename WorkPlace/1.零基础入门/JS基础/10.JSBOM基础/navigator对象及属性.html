@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--           navigator对象的userAgent属性
+            1.userAgent识别浏览器名称、版本、引擎以及操作系统等信息的内容
+            2.判断用户浏览器的类型
+            3.判断设备的终端是移动还是PC
+            4.appCodeName获取浏览器的名册
+              appName可以获取完整的浏览器名称
+    -->
+    <script>
+        //检测浏览器类型
+        function getBrowser(){
+            //获取userAgent属性
+            var explorer=navigator.userAgent.toLowerCase(),
+                browser;
+            if(explorer.indexOf("chrome")>-1){
+                browser="chrome";
+            }else if(explorer.indexOf("msie")>-1){
+                browser="IE";
+            }else if(explorer.indexOf("opera")>-1){
+                browser="opera";
+            }else if(explorer.indexOf("safari">-1)){
+                browser="safari";
+            }
+            return browser;
+        };
+        var explorer=getBrowser();
+        console.log("您当前使用的是："+explorer+"浏览器");
+    </script>
+</body>
+</html>

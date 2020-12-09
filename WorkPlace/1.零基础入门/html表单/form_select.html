@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>WWW.WDNMD基础Select标签.COM</title>
+    </head>
+<body>                                                  
+    <h1 align="center">注册信息</h1>     <!--post将表单数据作为http请求体的一部分，对所发信息的数量无限制，一般用于修改服务器上的资源-->           
+    <hr color="#336699"/>                                       
+    <form action="form.php" method="post" target="_blank">          <!--get会将表单信息暴露在传递的URL地址（网易地址栏里）后面，即用URL传递参数
+                                                    保密性不好，对所发信息的数量也有限制，多应用于查询信息-->
+        <table  width="720px" align="center" bgcolor="#f2f2f2">
+            <tr>
+                <td width="30%" align="center">姓名:</td>
+                <td><input type="text" name="username" size="20" maxlength="8"/></td>
+            </tr>
+            <tr>
+                <td align="center">邮箱：</td>
+                <td><input type="text" name="email" value="@qq.com"/></td>
+            </tr>
+            <tr>
+                <td align="center">密码:</td>
+                <td><input type="password" name="paw" size="20" maxlength="20"/></td>
+            </tr>
+            <tr>
+                <td align="center">确认密码:</td>
+                <td><input type="password" name="paw_confirm" size="20" maxlength="20" placeholder="请再次确认密码"/></td>
+            </tr>
+            <tr>
+                <td align="center">上传照片:</td>
+                <td><input type="file" name="photo"/></td>
+            </tr>
+            <tr>
+                <td align="center">性别:</td>
+                <td>
+                    男<input type="radio" name="sex" value="male"/>
+                    女<input type="radio" name="sex" value="female"/>
+                    蔡徐坤<input type="radio" name="sex" value="female" checked/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">爱好:</td>
+                <td>唱 <input type="checkbox" name="hobby" value="sing"/>
+                    跳 <input type="checkbox" name="hobby" value="jump"/>
+                    Rap<input type="checkbox" name="hobby" value="Rap"/>
+                    篮球<input type="checkbox" name="hobby" value="Basketball"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">城市:</td>
+                <td>
+                    <select name="city">
+                        <option value="xz" selected>-请选择-</option>
+                        <option value="bj">北京</option>
+                        <option value="tj">天津</option>
+                        <option value="sh">上海</option>
+                        <option value="gd">广东</option>
+                        <option value="cd">成度</option>
+                        <option value="wh">武汉</option>
+                    </select>
+                    <select name="city2"  size="4" multiple>                <!--size为列表的行数，multiple,增加功能摁住ctrl可多选-->
+                        <option value="bj">北京</option>
+                        <option value="tj">天津</option>
+                        <option value="sh">上海</option>
+                        <option value="gd">广东</option>
+                        <option value="cd">成度</option>
+                        <option value="wh">武汉</option>
+                    </select>
+                    <select name="city" size="4" multiple>
+                        <option value="xz" selected>-请选择-</option>
+                        <optgroup label="华北">
+                        <option value="bj">北京</option>
+                        <option value="tj">天津</option>
+                        <option value="sh">石家庄</option>
+                        </optgroup>
+                        <optgroup label="华南">
+                        <option value="gd">广东</option>
+                        <option value="cd">成度</option>
+                        <option value="wh">武汉</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">个人介绍:</td>
+                <td><textarea name="PersonalIntro" placeholder="请填写个人介绍" rows="6" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="来点我" name="button"/>
+                    <input type="submit" value="submit" name="submit"/>
+                    <input type="reset" value="reset" name="reset"/>
+                    <input type="image" src="image-button.png" name="image_button"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="hidden" name="hidden" value="这是对用户隐藏的信息"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute选择器</title>
+    <style type="text/css">
+        a[href]{                                     /* 选择所有使用attribute的元素 */
+            text-decoration: none;                        /* 语法格式：Element[attribute] */
+        }
+
+
+        a[href="#"]{                                 /*选择所有使用attribute="value"的元素 */
+            color: red;                                 /*语法格式：Element[attribute="value"]*/
+        }
+
+        a[class~="two"]{
+            color: #ff0;                           /*选择attribute属性包含value值的元素，不是单词内含有value，必须是一个单独的值 */
+        }                                                /*语法格式：Element[attribute="value"] */
+
+
+        a[href^="#"]{                                /*  选择attribute属性以value开头的所有元素 */
+            color: greenyellow;                        /*  语法格式：Element[attribute^="value"] */
+        }
+
+        a[href$="1"]{
+            color: hotpink;                        /*  选择attribute属性以value结尾的所有元素 */
+        }                                               /*  语法格式：Element[attribute$="value"] */
+
+
+
+          /*   <!--一下两者为重要的--> */
+        a[href*="lbwnb.html"]{
+            font-size: 30px;                         /* 选择attribute属性值包含字符串"value"的所有元素 */
+        }                                               /*  语法格式：Element[attribute*="value"] */
+
+        a[href|="lbwnb.html"]{                          
+            font-size: 30px;                         /* 选择attribute属性值为value或者以value-开头的元素 */
+        }                                               /*  语法格式：Element[attribute|="value"]    */       
+    </style>
+</head>
+<body>
+    <a href="./attribute选择器.html">attribute</a>            
+    <a href="#">attribute</a>      
+    <a href="#" class="two one">attribute</a>
+    <a href="#" class="two one">attribute</a>  
+    <a href="#">attribute</a>   
+    <a href="#">attribute</a>   
+    <a href="#1">attribute</a>    
+    <a href="wwwlbwnb.html">attribute</a>              
+</body>
+</html>
+

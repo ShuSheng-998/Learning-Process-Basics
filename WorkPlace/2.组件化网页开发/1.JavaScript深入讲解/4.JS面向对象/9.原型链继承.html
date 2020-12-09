@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型链继承</title>
+</head>
+<body>
+    <script>
+        /* 原型继承：用到原型链的概念 */
+        function person(name,age){
+            this.name = name,
+            this.age = age;
+        }
+        person.prototype.sayHello=function(){
+            alert("属性name值"+this.name);
+        }
+       /*  var per= new person("卢本伟",25);
+        per.sayHello(); */
+        function student(name,age){
+            person.call(this,name,age);
+        };
+        student.prototype=new person();
+        student.prototype.grade=3;
+        student.prototype.test=function(){
+            alert(this.grade+"---"+this.age);
+        }
+        var s = new student("卢本伟",28);
+        s.sayHello();
+        alert(s.grade);
+        s.test();
+       /*  这里继承了原有的属性和方法，
+       如果想借用构造函数还得在student对象中用call方法调用父类的构造函数 
+            如
+            function student(name,age){
+                person.call(this,name,age);
+            }
+       */
+    </script>
+</body>
+</html>

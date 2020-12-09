@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符类</title>
+</head>
+<body>
+    <script>
+    /* 1.对 待匹配的 字符串的每个字符 按顺序 在字符类中寻找，直到找到第一个匹配的字符 */
+        var str = "javascript";
+        var pattern = /[ajs]/
+        console.log(pattern.exec(str));
+
+    /* 2.对 待匹配的 字符串的每个字符 按顺序 在字符类中寻找，直到找到第一个与pattern不匹配的字符 */
+        var str_2="javascript";
+        var pattern_2=/[^js]/;
+        /* ^为取反操作 */
+        console.log(pattern_2.exec(str_2));
+
+    /* 3.对 待匹配的 字符串的每个字符 按顺序 在字符类(a-z)中寻找，直到找到第一个匹配的字符(26个字母中的一个) */
+        var str_3 = "javascript";
+        var pattern_3 = /[a-z]/;
+        /*  (1)a到z是灵活的，可取26个字母的任意(但前面必大于等于后面)
+            (2)还可/[a-zA-Z]/来匹配大写的字母
+            (3)遵循(2),还可[a-zA-Z0-9@_]
+         */
+        console.log(pattern_3.exec(str_3));
+    /* 4.对 待匹配的 字符串的每个字符 按顺序 在u4e00-u9fa5(汉字)中寻找，直到找到第一个匹配的字符(汉字) */
+        var str_4="卢本伟";
+        var pattern_4 = /[\u4ee0-\u9fa5]/
+        console.log(pattern_4.exec(str_4));
+    </script>
+</body>
+</html>

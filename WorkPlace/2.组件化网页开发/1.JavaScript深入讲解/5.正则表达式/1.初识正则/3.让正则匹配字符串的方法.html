@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>让正则匹配字符串的方法</title>
+</head>
+<body>
+    <script>
+        /* 1.test方法
+                语法：RegExp.test(要匹配的语句)
+                返回值：成功时返回true，失败时返回false
+         */
+          /* 2.exec方法
+                语法：RegExp.exec(要匹配的语句)
+                返回值：成功时返回匹配到的对应字符串的数组，失败时返回null
+         */
+        /* 3.模式修饰符
+                (1)i  --ignoreCase  忽视大小写
+                (2)g  --gloabal     全局匹配
+                (3)m  --multiline   多行匹配
+            可   /js/img    让模式具有多个修饰符
+         */
+
+        var str = "i love Js";
+        var pattern = /Js/ ;    /* var pattern = new RegExp("Js","igm"); */
+                                /* 第二个参数是模式修饰符 */
+        //test方法
+        console.log(pattern.test(str));
+        //exec方法
+        console.log(pattern.exec(str));
+        //模式修饰符  i
+        pattern = /js/i ;
+        console.log(pattern.test(str))
+    </script>
+</body>
+</html>

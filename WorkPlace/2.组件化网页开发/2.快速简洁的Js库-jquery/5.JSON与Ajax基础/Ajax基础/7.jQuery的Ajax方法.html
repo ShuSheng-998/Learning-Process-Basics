@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send方法</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+   <!--  <div class="banner" id="banner"></div> -->
+    <div class="banner" id="banner_jq"></div>
+    <script type="text/javascript" src="./JS/jquery.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url:"./server/slider.json",             //请求地址
+            type:"post",                            //请求方式
+            async:true,                             //同步异步
+            dataType:"json",                        //返回的数据格式
+            success:function(imgData){                  //请求成功回调
+                jQrenderDataToDom(imgData.slider);
+            }
+        })
+
+        //渲染数据
+        function jQrenderDataToDom(data){
+            var str = "";
+            $.each(data,function(index,obj){
+                str += '<a href="'+obj.linkUrl+'"><img src="'+obj.picUrl+'"></a>';
+            })
+            console.log(str);
+            $("#banner_jq").html(str);
+        }   
+    </script>
+</body>
+
+</html>

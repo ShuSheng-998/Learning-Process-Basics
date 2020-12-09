@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById——1</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*                 类数组对象的动态性
+            1.Nodelist、HTMLColletion、NamedNodeMap三个集合都是动态的，有生命、有呼吸的对象
+            2.他们实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在这些对象中
+            3.每当文档结构发生变化时，他们都会得到更新。因此，他们始终都会保存着最新、最准确的信息
+        */
+        myReady(function () {
+           var bn=document.getElementById("button")
+          bn.onclick=function(){
+              var target=document.getElementById("target");
+              console.log(target.innerHTML);
+          }
+        });
+    </script>
+</head>
+<body>
+    <a href="www.wdnmd.com" name="target">这是错误的元素</a>
+    <p id="target">这是正确的元素</p>          <!--  总是取第一个遇到的id元素 -->
+    <p id="target">这是另一个正确的元素</p>     
+    <button id="button" type="button">开始测试</button>
+</body>
+</html>

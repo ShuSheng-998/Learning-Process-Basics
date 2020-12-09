@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!--                onchange事件的用处
+            给菜单绑定onchange事件，一般作用于select或checkbox或radio
+         -->
+    <script>
+        //页面加载
+        window.onload=init;
+        //初始化
+        function init(){
+            var menu=document.getElementById("bgcolorMenu");
+            menu.onchange=function(){
+                console.log("abc");
+                //获取当前选中的值
+                var bgcolor=this.value;
+                /* var bgcolor=menu.options[menu.selectedIndex].value; *//* options获取的是一个option的数组 */
+
+                //如果bgcolor为空则背景色为白色
+                if(bgcolor==""){
+                    document.body.style.background="#fff";
+                }else{
+                    document.body.style.background=bgcolor;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        请选择您喜欢的背景色：
+        <select name="" id="bgcolorMenu">
+            <option value="">请选择</option>
+            <option value="#f00">红色</option>
+            <option value="#0f0">绿色</option>
+            <option value="#abcdef">天蓝色</option>
+            <option value="#ff0">黄色</option>
+            <option value="#ccc">灰色</option>
+        </select>
+    </div>
+</body>
+</html>

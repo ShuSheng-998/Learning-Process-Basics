@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解析机制详解</title>
+    <!-- 预解析是分标签进行的 -->
+
+
+   <!--  1.先预解析
+        2.逐步执行代码(跳过函数块)
+        3.注意函数块中是否有定义，没有时再通过作用域链查找
+        4.注意函数中的形参也会参与预解析，并且为undefined -->
+</head>
+<body>
+    <script>
+        /* JS作用域问题一
+            (1)
+            console.log(a)->undefined
+            var a = 1;
+            (2)
+            console.log(a);->报错
+            a=1;预解析时只会去找var，没有var就没有这个东西
+         */
+         /* JS作用域问题二
+            见视频
+
+          */
+    </script>
+</body>
+</html>

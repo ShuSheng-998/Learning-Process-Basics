@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件周期</title>
+</head>
+<body>
+    <!--                        事件周期 
+        解释器创建一个event对象后，会按如下过程将其在html元素间进行传播
+            1.第一阶段：事件捕获，事件对象沿DOM树向下传播
+            2.第二阶段，目标触发，运行事件监听函数
+            3.第三阶段：事件冒泡，事件沿DOM树向上传播
+        addEventListner的最后一个参数为false(默认)时是事件冒泡，为true时为事件捕获
+    -->
+    <div class="parent" id="parent">
+        <div class="child" id="child">点击儿子</div>
+    </div>
+    <script>
+        //事件冒泡
+        document.getElementById("parent").addEventListener("click",function(e){
+            alert("parent事件被触发，"+this.id);
+        },false);
+        document.getElementById("child").addEventListener("click",function(e){
+            alert("child事件被触发，"+this.id);
+        },false);
+        //      直系亲属树结构
+        //  html
+        //  body    添加了事件
+        //  parent  添加了事件
+        //  child   有事件          点击child后会向上冒(直系亲属)
+        //  事件冒泡：直系亲属树结构中，点击某个元素，由于冒泡作用，亲属树上的元素，凡是添加了事件的都会被触发。
+                /*  如果这个元素未绑定事件，而其父元素绑定了事件，则会冒到父元素的事件上执行 */
+    </script>
+</body>
+</html>

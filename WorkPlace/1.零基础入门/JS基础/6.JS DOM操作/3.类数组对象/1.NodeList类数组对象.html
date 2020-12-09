@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              NodeList对象的特点
+            1.NodeList是一种类数组对象，用于保存一组有序的节点
+            2.可通过方括号语法来访问NodeList的值，有item方法和lenth属性
+            3.他并不是Array的实例，没有数组对象的方法
+        */
+        myReady(function () {
+            var box = document.getElementById("box");
+            var nodes = box.childNodes;
+            console.log(nodes);
+            console.log(nodes[1]);
+            console.log(nodes.item(1));
+
+            /*  将nodelist转换成一个新的可增加节点的数组 */
+            function makeArry(nodelist) {
+                var arr=null;
+                try {
+                    return Array.prototype.slice.call(nodelist);
+                    /* Array.prototype.slice.call(arguments, 1)可以理解成是让arguments转换成一个数组对象，让arguments具有slice()方法。 */
+                }catch (e) {
+                    arr = new Array();
+                    for (var i = 0, len = nodelist.length; i < len; i++) {
+                        arr.push(nodelist[i]);
+                    }
+                }
+                return arr;
+            }
+            var newNodeList = makeArry(nodes);
+            newNodeList.push("<li>节点四</li>");
+            console.log(newNodeList);
+        });
+    </script>
+</head>
+
+<body>
+    <ul id="box">
+        <li>节点一</li>
+        <li>节点二</li>
+        <li>节点三</li>
+    </ul>
+</body>
+
+</html>

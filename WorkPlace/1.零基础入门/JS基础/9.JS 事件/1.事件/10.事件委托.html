@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+</head>
+<body>
+    <!--            事件委托
+        1.原理：利用事件冒泡
+        2.保证只添加一次事件，委托给爸爸
+    -->
+    <div class="parent" id="parent">
+        <div class="child" id="child">点击儿子</div>
+    </div>
+    <ul id="ul">
+        <li id="one">item1</li>
+        <li id="two">item2</li>
+        <li id="three">item3</li>
+        <li id="four">item4</li>
+        <li id="five">item5</li>
+        <li id="three">item6</li>
+    </ul>
+    <script>
+        var ul=document.getElementById("ul")
+        ul.addEventListener("click",function(event){
+            if(event.target.id=="one"){
+                alert("1");
+            }else if(event.target.id=="two"){
+                alert("2")
+            }else if(event.target.id=="three"){
+                alert("3")
+            }else if(event.target.id=="four"){
+                alert("4")
+            }else if(event.target.id=="five"){
+                alert("5")
+            }else if(event.target.id=="six"){
+                alert("6")
+            }
+        },false)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>否定选择器</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+        nav{
+            width: 800px;
+            margin: 0 auto;
+        }
+        nav>a{
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            display: block;
+            float: left;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #eeccee;
+        }
+        nav>a:not(:last-of-type){
+            border-right:1px solid red;             /* 最后一个此元素不具有此属性 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">first</a>
+        <a href="#">second</a>
+        <a href="#">third</a>
+        <a href="#">fourth</a>
+        <a href="#">fifth</a>
+    </nav>
+</body>
+</html>

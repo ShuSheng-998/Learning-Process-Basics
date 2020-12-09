@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象冒充</title>
+</head>
+<body>
+    <script>
+       /* 对象冒充:
+            (1)冒充父对象，传递特权属性和方法给子类
+            (2)实现继承的方法，拥有父类的所有属性和方法
+            (3)不包含原型链(prototype)中方法,因为prototype里的是共有属性和方法
+             */
+        function person(name,age){
+            this.name="卢本伟";
+            this.age=18;
+            this.sayHi = function(){
+                alert("hi");
+            }
+        }
+        person.prototype.walk = function(){
+            alert("walking...");
+        }
+
+        function student(name,age,grade){
+            this.newMethod=person;//冒充person对象，传递特权属性和方法给子类
+            this.newMethod(name,age);
+            this.grade=grade;
+        }
+        var s1=new student("PDD",28,90);//s1是student的对象，继承了person，拥有person的所有属性和方法
+        alert(s1.sayHi);
+    </script>
+</body>
+</html>

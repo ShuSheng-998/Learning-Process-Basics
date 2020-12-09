@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的本质</title>
+</head>
+<body>
+    <script>
+        /*      js函数的本质
+            1.可调用性
+            2.是对象
+         */
+        /*      定义
+            1.字面量{}
+                    function(num1,num2){
+
+                    }
+                    var add=function(){
+
+                    }
+            2.构造函数new Object()
+                    var add=new Function("num1","num2","return num1+num2")
+         */
+        /*      添加属性和方法
+                    function add(num1,num2){
+                        return num1+num2;
+                    }
+                    add.sex='male';
+                    add.setSex=function(sex){
+                        this.sex=sex;
+                    }
+         */
+         /*     作为数据值使用
+                    var  add=function(){
+                        return 1;
+                    }
+          */
+    </script>
+</body>
+</html>

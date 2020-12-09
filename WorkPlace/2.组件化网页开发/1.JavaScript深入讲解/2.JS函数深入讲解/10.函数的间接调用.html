@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的间接调用</title>
+</head>
+<body>
+    <script>
+        var name = "xm";
+        var Person = {};
+        Person.name = "xh";
+        Person.getName=function(){
+            return this.name;
+        }
+        console.log(Person.getName());//直接调用
+        console.log(Person.getName.call(window))//间接调用，call内的第一个参数改变了this的指向
+        console.log(Person.getName.apply(window));
+        /* call和apply的区别 ：传递参数时
+        1.Person.add.call(window,1,2);一个一个串
+        2.Person.apply(windw,[1,2]);以数组的方式传递
+        */
+       /*  用处：
+            当收到的参数是数组，而需要的时数组内的值时，就可以用到apply，而不用遍历数组 
+       */
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only-child</title>
+    <style>
+        article:only-child{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article>111</article>         <!--  父元素是此级下的唯一子元素时匹配 -->
+    </section>
+    <section>
+        <article>111</article>
+        <div></div>
+    </section>
+</body>
+</html>

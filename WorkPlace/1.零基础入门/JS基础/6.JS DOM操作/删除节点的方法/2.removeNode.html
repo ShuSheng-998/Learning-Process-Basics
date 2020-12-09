@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+           /*                       removeChild
+                1.语法：Element.removeNode(从哪个位置开始分割)，参数是布尔值，默认为false
+                2.功能：删除某个节点中的指定子节点
+                3.返回值：返回新的文本节点，位置在新的节点后面
+                4.说明：IE特有的
+            */
+          var myUl=document.getElementById("myUl");
+        
+          var removedNode=myUl.removeNode();
+          console.log(removedNode);
+         
+        });
+    </script>
+</head>
+<body>
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</body>
+</html>
+ 

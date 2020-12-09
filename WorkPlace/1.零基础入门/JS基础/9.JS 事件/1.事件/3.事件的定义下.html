@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_2">DOM2级事件的绑定</button>
+    <script>
+        /***
+           * 1.var btn_2=document.getElementById("btn_2");      取DOM对象
+           * 2.给事件对象绑定一个事件类型 btn_2.addEventListener("click",function(){},false);
+           * 3.参数
+                (1)事件类型
+                (2)处理函数，直接定义在内部
+                (3)默认为false的布尔类型
+        ***/
+        var btn_2=document.getElementById("btn_2");
+        btn_2.addEventListener("click",function(){
+            alert("DOM2级事件的绑定方式")
+        },false);
+    </script>
+</body>
+</html>

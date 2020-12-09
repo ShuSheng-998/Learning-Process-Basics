@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+           /*                       insertBefore
+                1.语法：Element.insertBefore(需要插入的节点,被插的节点) 
+                1.功能在指定元素的前面插入对应的元素
+                3.返回值：新插入的节点 
+                4.第二个参数为null时实现得是appendchild得功能
+            */
+            var myUl=document.getElementById("myUl");
+            var txt=document.createTextNode("4");
+            var linew=document.createElement("li");
+            linew.appendChild(txt);
+            var li2=myUl.children[1];
+            var returnNode=myUl.insertBefore(linew,li2);        /* 返回得是新插入得节点 */
+            console.log(returnNode);        
+            /* myUl.insertBefore(linew,null);                       第二个参数为null时实现的是appendchild得功能
+                myuL.insertBefore(linew,firstElementChild)          在对应元素的第一个子元素前插入新元素
+                myuL.insertBefore(linew,lastElementChild)           在对应元素的最后一个子元素前插入新元素
+            
+            */
+
+        });
+    </script>
+</head>
+<body>
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</body>
+</html>
+ 

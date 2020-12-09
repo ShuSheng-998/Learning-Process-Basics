@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttributes</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        /*              removeAttributes的特点
+            1.removeAttribute(属性名)删除某个自定义属性
+            2.属性名最后都会被转化为小写(不区分大小写)
+        */
+        myReady(function () {
+        var div=document.getElementById("div0");
+        div.removeAttribute("style");
+        });
+    </script>
+</head>
+<body>
+    <div id="div0" url="http://www.baidu.com" xxx="aaa" Yyy="bbb" qqq="ccc" style="color: #abcdef;"
+    onclick="alert(0)">看我</div>
+</body>
+</html>

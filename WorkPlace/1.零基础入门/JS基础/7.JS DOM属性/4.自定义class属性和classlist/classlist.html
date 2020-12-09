@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attributes</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              data属性
+           1.以data-来开头
+           2.用于存储页面或者应用程序的私有定义的属性
+
+        */
+        var CL={
+            addClass:function(ele,cls){
+                ele.classList.add(cls);
+            },
+            removeClass:function(ele,cls){
+                ele.classList.remove(cls);
+            },
+            hasClass:function(ele,cls){
+                return  ele.classList.contains(cls);
+            },
+            toggleClass:function(ele,cls){
+                return ele.classList.toggle(cls);
+            }
+        }
+        myReady(function () {
+            var body=document.body;
+            console.log(CL.hasClass(body,"bbb"));
+            CL.addClass(body,"ccc");
+            CL.removeClass(body,"aaa");
+            CL.toggleClass(body,"bbb");     /* 如果有则删除这个class，如果无则添加这个class */
+
+            setTimeout(function(){
+            alert(document.body.classList.toString())
+        },2000);
+        });
+        
+    </script>
+</head>
+<body class="aaa bbb  aaa">
+</body>
+</html>

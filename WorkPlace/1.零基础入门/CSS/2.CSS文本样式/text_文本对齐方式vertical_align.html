@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        p{background-color: #ececec;height: 80px;font-size: 20px;}
+        span{color:red;font-size: 14px;}
+        .sub{vertical-align: sub;}             /* vertical-align支队行内元素生效，对块级元素（div、p）无效 */
+        .super{vertical-align: super;} 
+        .baseline{vertical-align: baseline;}
+        .top{vertical-align: top;}
+        .texttop{vertical-align: text-top;}
+        .middle{vertical-align: middle;}
+        .textbottom{vertical-align: text-bottom;}
+        .bottom{vertical-align: bottom;}
+        td{height: 80px;width: 100px;}         
+    </style>
+</head>
+<body>
+    <b>----sub和super值----</b>
+    <p>CSS层叠样式表<span class="sub">sub</span></p> 
+    <p class="sub">CSS层叠样式表<span>sub</span></p>
+    <p>CSS层叠样式表<span class="super">super</span></p>
+
+
+    <p>
+        ----CSS层叠样式----
+        <span>(Cascading Style Sheet)</span>
+        <img src="logo.jpg">
+    </p>
+        <!-- 基线 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="baseline">基线baseline</span>
+        <img src="logo.jpg">
+    </p>
+
+        <!-- 顶端对齐 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="top">顶端对齐top</span>
+        <img src="logo.jpg">
+    </p>
+
+        <!-- 文本的顶端对齐 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="texttop">文本的顶端对齐texttop</span>
+        <img src="logo.jpg">
+    </p>
+
+        <!-- 中部对齐 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="middle">中部对齐middle</span>
+        <img src="logo.jpg" class="middle">
+    </p>
+
+        <!-- 文本的底端对齐 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="textbottom">文本的低端对齐textbottom</span>
+        <img src="logo.jpg">
+    </p>
+
+        <!-- 底端对齐 -->
+    <p>
+        ----CSS层叠样式----
+        <span class="bottom">底端对齐</span>
+        <img src="logo.jpg">
+    </p>
+
+    <b>----长度和百分比的值----</b>
+            <!-- 长度值 -->
+    <p>
+        ----CSS层叠样式----
+        <span style="vertical-align: 10px;">长度值</span>
+        <img src="logo.jpg">
+    </p>
+            <!-- 百分比值 -->
+    <p>
+        ----CSS层叠样式----
+        <span style="vertical-align: -50%;">长度值</span>
+        <img src="logo.jpg">
+    </p>
+
+    <b>----应用于单元格元素----</b>
+    <table border="1" class="one" cellspacing="0">
+        <tr>
+            <td class="top"><span>top</span></td>
+            <td class="middle"><span>middle</span></td>
+            <td class="bottom"><span>bottom</span></td>
+        </tr>
+    </table>
+</body> 
+</html>

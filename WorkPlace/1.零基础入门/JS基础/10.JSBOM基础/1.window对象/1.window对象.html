@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象</title>
+    <!--             BOM 
+        BOM(browser object model)浏览器对象模型
+    -->
+</head>
+<body>
+     <!--            window
+        1.window是浏览器的一个实例，在浏览器中window对象有双重角色。
+        2.他既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的Global(全局)对象
+        3.全局变量--脚本的任何一个地方都能访问的的变量
+    -->
+    <script>
+        var age=15;                 /* 全局变量 */
+        function sayAge(){
+            alert("我"+age);
+        }
+        //声明一个全局变量
+        window.username="marry" //等同于var username="marry";
+        //声明一个全局方法
+        window.sayName=function(){
+            alert("我是"+this.username);
+        }
+        sayAge();
+        window.sayName();
+    </script>
+</body>
+</html>

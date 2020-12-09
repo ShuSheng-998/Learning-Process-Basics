@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //获取扩展名
+        var url="http://baidu.com/index.txt";
+        function getFileFormat(){
+            var pos=url.lastIndexOf(".");
+            var str=url.substring(pos);
+            return str;
+        }
+        var str=getFileFormat(url);
+        console.log(str);
+    </script>
+</body>
+</html>

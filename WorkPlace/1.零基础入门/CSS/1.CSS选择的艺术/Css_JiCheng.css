@@ -1,0 +1,3 @@
+/* div{font-size: 20px;border: 1px solid yellowgreen;} */
+
+/* body{font-size: 15px;} */    /*  全部继承，但h1会根据器大小进行改变 */

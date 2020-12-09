@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charAt与charCodeAt</title>
+</head>
+<body>
+    <script>
+        /*              charAt
+            语法:stringObject.charAt(index)
+            功能:返回stringObject中index位置的字符
+        */
+        var str="Hello word";
+        console.log(str.charAt(1));
+
+
+          /*            charCodeAt
+            语法:stringObject.charCodetAt(index)
+            功能:返回stringObject中index位置字符的编码
+         */
+         console.log(str.charCodeAt(1));
+
+
+        /*              indexOf和lastindexOf（从末尾开始检测）
+            语法：stringObject.indexOf("o");
+            功能：从一个字符串中搜索指定的字符串，返回子字符串(第一个字符)的位置
+            返回值：数值，若未找到则返回-1；
+         */
+        var email="marry@163.com"
+        console.log(email.indexOf("@"));
+    </script>
+</body>
+</html>

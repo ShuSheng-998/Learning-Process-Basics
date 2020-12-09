@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function(){
+           var box=document.getElementById("box");
+           for(var i=0,len=box.childElementCount;i<len;i++){        /* childElementCount,返回此节点的子节点的个数 */
+               console.log(box.children[i]);                 /* children[]中只包含元素节点，去除了空节点 */
+           }
+           var li_1=box.firstElementChild;
+           var li_2=box.lastElementChild;
+           console.log("<br/>")
+           console.log(li_1);
+           console.log(li_2);
+           var li_3=li_1.nextElementSibling;        /* 还有previousElementSibling */
+           console.log(li_3);
+        });
+    </script>
+</head>
+<body>
+   <ul id="box">
+       <li>节点一</li>
+       <li>节点二</li>
+       <li>节点三</li>
+   </ul>
+</body>
+</html>

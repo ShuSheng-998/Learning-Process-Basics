@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑与</title>
+</head>
+<body>
+    <script>
+        var str=true;
+        var str2="no"
+        var num=30;
+        console.log(str&&num&&str2);  /* 1.当逻辑与符号前的第一个操作数隐式类型转换后为true，返回最后一个变量的操作数
+                                         2.当逻辑与符号前的第一个操作数隐式类型转换后为false时，返回第一个操作数
+                                         3.如果有一个操作数是null，则返回null
+                                         4.如果有一个操作数是NaN，则返回NaN
+                                         5.如果有一个操作数是undefined，则返回undefined
+                                         */
+
+        console.log(90||0);         /* 1.当逻辑与符号前的第一个操作数隐式类型转换后为true时，返回第一个操作数
+                                       2.当逻辑与符号前的第一个操作数隐式类型转换后为false后，继续判断下一个操作数直到
+                                         无论是什么类型都会打印如：null或者undefined或NaN(50-"abc")
+                                     */
+
+        /* 逻辑非
+        1.无论操作数是什么类型，逻辑非都会返回一个布尔值
+        2.
+         */
+    </script>
+</body>
+</html>

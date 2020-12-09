@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.去除字符串前后的空白字符</title>
+</head>
+<body>
+    <script>
+        /* 方法1 */
+        var str = "     LBWNB   ";
+        var pattern = /^\s+|\s+$/g;//不加g它匹配到第一个就结束了，加了g和|会把每个都匹配上
+        console.log("|"+str.replace(pattern,"")+"|");
+        /* 方法2    :比方法1快四倍 
+                说明：不一定要用一个高大上的正则来解决所有问题，
+                        而可以拆开，用一系列简单的正则来解决，有时效果更好。
+            */
+        var str_easy = "     LBWNB   ";
+        var pattern_1 = /^\s+/;
+        var pattern_2 = /\s+$/;
+        console.log("|"+str_easy.replace(pattern_1,"").replace(pattern_2,"")+"|");
+
+    /* 自己封装去除字符串前后的空白字符的方法 */
+        function trim(str){
+            return str.replace(/^\s+/,"").replace(/\s+$/,""); 
+        }
+        console.log(trim(str_easy));
+    </script>
+</body>
+</html>

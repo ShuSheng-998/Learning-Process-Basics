@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非贪婪重复</title>
+</head>
+<body>
+    <script>
+        /* 贪婪匹配：量词才有，默认为贪婪。即匹配允许的最多的字符(尽可能多地匹配) */
+        /* 非贪婪匹配：在量词后面加?,表示匹配允许的最少的字符(尽可能少地匹配) */
+
+        /* 例1 */
+        var str = "aaabbb";
+        var pattern=/a+?/;
+        console.log(pattern.exec(str));
+        /* 例2 
+            正则总会去寻找待匹配字符串第一个可能匹配的位置
+        */
+        var str_2 = "aaabbb";
+        var pattern_2=/a+?b/;
+        console.log(pattern_2.exec(str_2));//aaab
+       /*  例3 
+            贪婪和非贪婪在html中的运用
+       */
+        //贪婪
+        var str_2 = "<td><p>a</p></td><td><p>b</p></td>";
+        var pattern_2=/<td>.*<\/td>/;
+        console.log(pattern_2.exec(str_2));
+        //非贪婪
+        var pattern_3 = /<td>.*?<\/td>/
+        console.log(pattern_3.exec(str_2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历实现2</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function(){
+            var s="";
+            function travel(space,node){           /*  space存储节点之间分割的字符串，node保存遍历的当前节点 */
+                if(node.tagName){       //如果当前的node是标签，而非空，就拼接字符串
+                    s+=space+node.tagName+"<br/>";
+                    console.log(s);
+                }
+                var len=node.childNodes.length;    //保存当前节点的子节点的个数
+                for(var i=0;i<len;i++){                 /* 遍历此节点的子节点(这里是深度遍历) */
+                    travel(space+"|-",node.childNodes[i]);
+                }
+            }
+            travel("",document);
+                document.write(s);
+        });
+    </script>
+</head>
+<body>
+    <form>
+    <input type="button" id="button1" name="button1" value="Click me"/>
+    </form>
+</body>
+</html>

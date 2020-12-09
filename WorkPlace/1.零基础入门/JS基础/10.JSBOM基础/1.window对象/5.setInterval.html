@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval方法</title>
+</head>
+<body>
+    <!--        setInterval方法
+        1.语法：setInterval(code,millisec)
+        2.功能：每隔指定的时间执行一次代码
+        3.参数说明
+            (1)code:要调用的函数或要执行的JavaScript代码串
+            (2)millisec:周期性执行代码的时间间隔，以毫秒计
+        4.返回值：返回一个ID值，通过他来取消超时调用
+    -->
+
+     <!--        clearInterval法
+        1.语法：clearInterval(id_of_setInterval)
+        2.功能：取消由setInterval方法设置的Interval
+        3.参数说明
+            (1)id_of_setInterval：由setInterval()返回的ID值，该值标识要取消的延迟执行块
+    -->
+    <script>
+        //每隔1秒打印
+        var intervalId=setInterval(function(){
+            console.log("您好")
+        },1000);
+        // 10秒之后停止打印
+        setTimeout(function(){
+            clearInterval(intervalId);
+        },10000)
+
+        var num=1,
+            max=10,
+            timer=null;//因为intervalId是一个对象
+
+        //每隔一秒，num递增一次，直到num的值等于max    
+        timer=setInterval(function(){
+            console.log(num); 
+            num++
+            if(num>max){
+                clearInterval(timer);
+            }
+        },1000)
+        //使用超时调用实现
+       /*  function inCreaseNum(){
+            console.log(num);
+            num++;
+            if(num<=max){
+                setTimeout(inCreaseNum,1000)
+            }else{
+                clearTimeout(timer);
+            }
+        }
+        timer=setTimeout(inCreaseNum,1000); */
+    </script>
+</body>
+</html>

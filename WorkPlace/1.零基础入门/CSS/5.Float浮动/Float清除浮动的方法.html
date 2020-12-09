@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动的方法</title>
+    <style type="text/css">
+       /*  .clear{
+            clear: both;
+        }                 */                      /*  方法一，步骤一 */
+        .container{
+            width: 600px;
+            border:2px solid #eeccee;
+           /*  overflow: hidden;    */                /* 方法二 */
+           zoom: 1;
+        }
+        .clearfix::after{
+            content:'.';
+            height: 0px;
+            display: block;                        /*  方法三：1.添加clearfix类 */
+            visibility: hidden;
+            clear: both;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+        .box_1{width: 100px;
+                height: 100px;
+                background:blue;
+                color:#fff;
+                margin: 10px;
+                float: left;}
+        .box_2{width: 100px;
+                height: 100px;
+                background: red;
+                color:#fff;
+                margin: 10px;
+                float: left;}
+        .box_3{
+            width: 100px;
+                height: 100px;
+                background: orange;
+                color:#fff;
+                margin: 10px;
+                float: left;
+        }
+        .box_4{width: 500px;
+                height:200px ;
+                background-color: chartreuse;}
+               /* 只影响对应的元素后的文字 */
+    </style>
+</head>
+<body>
+    <div class="container clearfix">        <!-- 方法三：2.添加clearfix类 -->
+        <div class="box_1">11111</div>
+        <div class="box_2">22222</div> 
+        <div class="box_3">33333</div>
+        <!-- <div class="clear"></div>    -->        <!-- 方法一，步骤二 -->
+    </div>
+    <div class="box_4"></div>
+</body>
+</html>

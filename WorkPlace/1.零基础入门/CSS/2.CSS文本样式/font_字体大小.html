@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体大小</title>
+    <style type="text/css">
+        p{font-size: 30px;}
+        .larger{font-size: larger;}
+        .smaller{font-size: smaller;}
+        .em{font-size: 2em;}
+        .percent{font-size: 200%;}
+    </style>
+</head>
+<body>
+    <p>文字大小px受显示器分辨率的影响</p>
+    <p>文字大小<span class="larger">相对于父元素的文字大小而改变</span></p>
+    <p>文字大小<span class="smaller">相对于父元素的文字大小而改变</span></p>
+
+    <div>
+        <p>文字大小<span class="em">相对值em</span></p>
+        <p class="percent">文字大小<span class="percent">相对值%</span></p>     
+      <!--   字体大小也存在继承关系 -->
+    </div>
+</body>
+</html>

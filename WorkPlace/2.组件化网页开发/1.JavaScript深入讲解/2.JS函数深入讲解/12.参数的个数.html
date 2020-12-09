@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数的个数</title>
+</head>
+<body>
+    <script>
+        function add(num1,num2){
+            return num1+num2;
+        }
+       /*  实参==形参
+                add(1,2)
+       */
+      /*  实参<形参
+            add(1);
+            num1=1;
+            num2=undefined
+       */
+       /* 可选参数 
+            如一共两参数，一个必填，一个可不填，不填时，有默认值
+       */
+       function pow(base,power){
+           /* if(!power)power = 2; */
+           power = power||2;//短路操作
+           return Math.pow(base,power);
+       }
+       console.log(pow(3,2));
+       console.log(pow(2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js解析机制</title>
+</head>
+<body>
+    <script>
+       /*  js的解析过程
+                1.预解析
+                2.逐行解读代码
+        */
+        var name ="xm";
+        var age =18;
+        function fn(){
+            console.log(name);//undefined
+            var name ="xh";
+            var age=10;
+        }
+        /* 1.预解析
+            window
+                name = undefined
+                age = undefined
+                function fn(){
+                    console.log(name);//undefined
+                    var name ="xh";
+                    var age=10;
+                }
+            fn
+                name=undefined
+                age=undefined
+                argument=undefined
+
+            1.函数名与变量名冲突，函数名直接覆盖变量名
+            2.函数名冲突，后定义的保留
+            3.不要再if或for中写函数
+         */
+    </script>
+</body>
+</html>

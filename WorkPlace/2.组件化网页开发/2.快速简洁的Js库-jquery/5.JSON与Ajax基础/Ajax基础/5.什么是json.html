@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send方法</title>
+</head>
+
+<body>
+    <!--                            json
+        1.什么是JSON
+            JSON(javascipt object notation)全称是javascript对象表示法，他是一种数据交换的文本格式，
+            而不是一种编程语言，用于读取结构化数据，取代繁琐笨重的XML格式
+
+        2.JSON语法可表示下列三种类型的值：
+            (1)简单值：
+                ***使用与JavaScript相同的语法，可以在JSON中表示字符串、数值、布尔值和null
+                ***字符串必须用双引号表示，不能使用单引号，数值必须以十进制表示，且不能用NaN和Infinity
+                ***说明：JSON不支持Javascript中的undefined
+            (2)对象
+                ***对象作为一种复杂数据类型，表示的是一组有序的键值对儿，每个键值对儿中的值可以是简单值，也可是复杂数据类型的值
+                ***JSON对象的键名必须加双引号，
+                ***JSON不是JavaScript语句，结尾没有分号
+                ***同一个对象不应该出现同名属性
+            (3)数组
+                ***数组也是一组复杂数据类型，表示一组有序的值的列表，可以通过数组索引来访问其中的值
+                ***数组或对象最后一个成员后不加逗号
+-->
+    <script type="text/javascript">
+        /* 封装通用的xhr对象 兼容各个版本 */
+        function createXHR() {
+            //判断浏览器是否将XMLHttpRequest作为本地对象实现，针对IE7,firefox,opera等
+            if (typeof XMLHttpRequest != undefined) {
+                return new XMLHttpRequest();
+            } else if (typeof ActiveXObject != undefined) {
+                //将所有可能出现的ActiveObject版本放在一个数组中
+                var xhrArr = ['Miscroft.XMLHTTP', 'MSXML2.XMLHTTP.6.0',
+                    'MSXML2.XMLHTTP.5.0', 'MSXML2.XMLHTTP.4.0',
+                    'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP.2.0'
+                ]
+                //遍历创建XMLHttpRequest对象
+                var len = xhrArr.length,
+                    xhr;
+                for (var i = 0; i < len; i++) {
+                    try {
+                        //创建XMLHttpRequest对象
+                        xhr = new ActiveXObject(xhrArr[i]);
+                        break;
+                    } catch (e) {};
+                }
+                return xhr;
+            } else {
+                throw new Error('No XHR Object availbel');
+            }
+        }
+
+        /* 1.XMLHttpRequest对象 */
+        var xhr = createXHR();
+        var data;
+        /* 2.响应XMLHttpRequest对象状态变化的函数,onreadystatechange在readystatechange属性发生改变时触发 */
+        xhr.onreadystatechange = function () {
+            // === 4,响应内容解析完成，可以在客户端调用
+            if (xhr.readyState === 4) {
+                //>=200才是异步真的调用成功，304表示请求资源没有被修改可以使用浏览器的缓存(上次的请求还在),404找不到页面，100还需请求
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    /* 5.获得服务器返回的数据 */
+                        /*  data = eval("("+xhr.responseText+")"); */
+                    data = JSON.parse(xhr.responseText);
+                    /* 6.渲染数据到页面中 */
+                    renderDataToDom();
+                }
+            }
+        }
+        /* 3.创建请求 */
+        xhr.open("get", "./server/slider.json", true);
+        //xhr.open("post", "./server/slider.json", true);
+        /* 4.发送请求 */
+        xhr.send(null);
+        //xhr.send({user:"LBw",id:16});
+        //设置http头部信息xhr.setRequestHeader("Content-type","application/x-www-form-urlendoded");
+    </script>
+</body>
+
+</html>

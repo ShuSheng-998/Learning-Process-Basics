@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slice、substring和substr</title>
+</head>
+<body>
+    <script>
+       /*               slice() 
+            语法：stingObject.slice(strat,end)
+            功能：截取字符串
+            说明：1.start(必需)规定从何处开始选取
+                2.end(可选)规定从何处结束选取，是数组片段结束处的数组下标，未指定时从start到数组结束的所有元素 
+       */
+       var str="Hello word";
+       console.log(str.slice(7,10))
+
+        /*              substring()
+            语法：stingObject.substring(strat,end)
+            功能：截取字符串
+            说明：1.start(必需)规定从何处开始选取
+                2.end(可选)规定从何处结束选取，是数组片段结束处的数组下标，未指定时从start到数组结束的所有元素 
+                3.当参数为负数时自动将参数转换为0
+                4.会把较小的数作为start，较大的数字作为end
+       */
+       console.log(str.substring(7,10));
+
+        /*              substr()
+            语法：stingObject.substr(strat,len)
+            功能：截取字符串
+            说明：1.start(必需)规定从何处开始选取
+                2.len(可选),表示截取的字符总数，省略时截取至末尾；
+                3.当参数为负数时自动将参数加上字符串长度
+                4.len为负数时，返回空串
+       */
+       console.log(str.substr(6,3));
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open和close方法</title>
+</head>
+<body>
+     <!--        open方法
+        1.语法：window.open(pageURL,name,parameters)
+        2.功能：打开一个新的浏览器窗口或查找一个已命名的窗口
+        3.参数说明
+            (1)pageURL:子窗口的路径
+            (2)name:子窗口的句柄(name声明了子窗口的名称，方便后期通过name对子窗口进行引用)
+            (3)parameters:窗口参数(各参数用逗号分隔)
+    -->
+    <input type="button" id="quit" value="退出">
+    <script>
+        window.onload=function(){
+            window.open("./newWindow.html","newWindow")
+        }
+        var quit=document.getElementById("quit");
+        quit.addEventListener("click",function(){
+            window.close();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js中的闭包</title>
+    <!--            闭包：
+        闭包是一个拥有许多变量和绑定了这些变量的表达式(通常是一个函数) -->
+</head>
+<body>
+    <script>
+        //闭包 全局变量在函数内部可以访问，但外部不能访问函数内部
+
+        function a(){
+            var i=0;
+            function b(){
+                alert(++i);
+            }
+            return b;
+        }
+        var c= a();
+        /* c(); *///1,因为a()返回的是b给c，实际上就是调用的是b();
+
+        function f1(){
+            var n=999;
+            ndd = function(){
+                n+=1;
+            }
+            function f2(){
+                alert(n);
+            }
+            return f2;
+        }
+        var rs=f1();
+        rs();//999
+        ndd();
+        rs();//1000
+        //特点：函数b是在a内嵌套的，函数a需要返回函数b
+        /* 用途：
+                1.读取函数内部变量
+                2.让i(局部函数的局部变量)变量的值保留在内存中
+         */
+        /* 优缺点
+            优点：
+                1.有利于封装，可以访问局部变量了
+            缺点：
+                2.因为定义的i始终在内存中，内存浪费严重，容易产生内存泄漏 
+         */
+    </script>
+</body>
+</html>

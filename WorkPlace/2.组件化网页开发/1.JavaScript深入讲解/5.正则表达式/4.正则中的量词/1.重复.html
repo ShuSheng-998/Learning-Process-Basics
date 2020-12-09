@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复</title>
+</head>
+<body>
+    <script>
+        /* 1.重复：对 待匹配的 字符串的每个字符 按顺序 在正则中寻找，直到找到{3}中个数 个匹配的字符
+                (1){1,2}找到大于等于1，小于等于2个(范围大匹配大的个数，范围小匹配小的个数)
+                (2){1,}找到大于等于1个
+                (3)匹配0个或1个{\d?}
+                (4)匹配至少一个{\d+}
+                (5)零次或更多{\d*}
+        */
+        var str="110";
+        var pattern = /\d{1,2}/;
+        console.log(pattern.exec(str));
+
+        var str_2="肯德基豪华午餐：￥15.5！";
+        var pattern_2 = /\d+\.?\d*/;
+        /* var pattern_2 = /\d{1,}\.{0,1}\d{0,} */
+        console.log(pattern_2.exec(str_2));
+    </script>
+</body>
+</html>

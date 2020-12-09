@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace</title>
+</head>
+<body>
+     <!--               位置操作
+        1.语法：location.href="地址"
+        2.功能：改变浏览器页面的位置(hash和search也可以)
+        3.建立一个新的URL，并在浏览器的浏览记录中生成一条记录
+
+        1.语法：locatin.replace("地址")
+        2.功能：改变浏览器页面的位置
+        3.建立一个新的URL，不会再浏览器的浏览记录中生成记录
+        
+        1.语法：locatin.reload("地址")
+        2.功能：重新加载当前页面
+        3.说明：
+                (1)location.reload()有可能从缓存中加载
+                (2)location.reload(true)从服务器重新加载
+    -->
+    <input type="button" id="reload" value="刷新页面">
+    <script>
+        setTimeout(function(){
+            /* location.href="./1.location对象属性.html"; *//* 可回去 */
+            //建立一个新的URL，并在浏览器的浏览记录中生成一条记录
+            //window.location="/10.JSBOM基础/2.location对象/1.location对象属性.html"
+            location.replace("./1.location对象属性.html");
+        },2000);
+        document.getElementById("reload").addEventListener("click",function(){
+            location.reload();
+        })
+    </script>
+</body>
+</html>

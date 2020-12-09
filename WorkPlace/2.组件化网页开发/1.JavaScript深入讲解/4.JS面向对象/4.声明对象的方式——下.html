@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明对象的方式——下</title>
+</head>
+<body>
+    <script>
+       /* 4. js中工厂方式声明对象 */
+       function createObject(name,sex){
+           var obj = new Object();
+           obj.name = name;
+           obj.age =age;
+           obj.run=function(){
+               return this.name+"----"+this.age+"运行中...";
+           }
+            return obj;    
+       }
+       /* var box1  = createObject("卢本伟",18); */
+    /*  5.js原型模式声明对象 */
+            //1.直接定义
+      function test(){};
+      test.prototype.color = "red";//prototype是每个函数自带的属性
+      test.prototype.heights = "1.7";
+      test.prototype.width = "20";
+      test.prototype.showInfo = function(){
+          alert(this.color+"---"+this.heights+"---"+this.width);
+      }
+      var car1=new test();
+      car1.showInfo();
+
+             //2.json数据定义属性和方法
+            /* test.prototype={
+                    color:"red",
+                     heights:"1.7",
+                     width:"20",
+                    showInfo:function(){
+                        alert(this.color+"---"+this.heights+"---"+this.width);
+                    }
+                } */
+    /* 6.js混合模式声明对象：构造模式+原型模式 */
+     function blog(name,url,friend){
+         this.name   =name;
+         this.url    =url;
+         this.friend =friend;
+     }
+     blog.prototype={
+         test_!:"LBWNB",
+         showInfo_1:function(){
+            alert(this.name+"---"+this.url);
+         },
+         getIn:function(){
+            alert(this.friend);
+         }
+     }
+     var peo=new blog("卢本伟","www.pornhub.com","刘谋");
+     peo.showInfo_1();
+    </script>
+</body>
+</html>

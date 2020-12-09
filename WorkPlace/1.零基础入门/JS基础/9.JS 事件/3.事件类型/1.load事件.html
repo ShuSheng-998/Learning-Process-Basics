@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var EventUtil={
+            addHandler:function(element,type,handler){
+                //绑定事件
+                //chrome、firfox、IE9       addEventListener
+                //IE8及以下                 attachEvent
+                if(element.addEventListener){
+                    element.addEventListener(type,handler,false);
+                }else if(element.attachEvent){
+                    element.attachEvent("on"+type,handler);
+                }else{
+                    element["on"+type]=null;
+                }
+            },
+            removeHandler:function(element,type,handler){
+                //移除事件
+                 //chrome、firfox、IE9       removeEventListener
+                //IE8及以下                 detachEvent
+                if(element.removeEventListener){
+                    element.removeEventListener(type,handler,false);
+                }else if(element.detachEvent){
+                    element.detachEvent("on"+type,handler);
+                }else{
+                    element["on"+type]=null;
+                }
+            }
+        }
+        //UI事件
+        //load当页面完全加载后在window上面触发
+        EventUtil.addHandler(window,"load",function(e){
+           console.log("load");
+        });
+        //img标签加载完毕后触发
+        var image=document.createElement("img");
+        EventUtil.addHandler(image,"load",function(e){
+            alert("图片加载 完毕");
+        });
+        image.src="./img/1.jpg";
+        //图片预加载,提前把图片加载到内存中
+        var image_1=new Image();
+        EventUtil.addHandler(image,"load",function(e){
+            alert("图片加载 loaded");
+        });
+        image.src="./img/1.jpg";
+        //JS动态加载完毕
+       /*  var script=document.createElement("script");
+        EventUtil.addHandler(script,"load",function(e){
+            alert("js 加载完成");
+        })
+        script.src="jquery.js";
+        document.body.appendChild(script); */
+
+    </script>
+</body>
+</html>

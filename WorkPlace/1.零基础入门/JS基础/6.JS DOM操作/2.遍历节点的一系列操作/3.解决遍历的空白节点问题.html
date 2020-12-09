@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解决遍历的空白节点问题</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function(){
+           var box=document.getElementById("box");
+           for(var i=0,len=box.childNodes.length;i<len;i++){
+              if(box.childNodes[i].nodeType==1){        //nodeType属性，判断是否为元素节点
+                console.log(box.childNodes[i]); 
+              }                 /* children[]中只包含元素节点，去除了空节点 */
+           }
+        });
+    </script>
+</head>
+<body>
+   <ul id="box">
+       <li>节点一</li>
+       <li>节点二</li>
+       <li>节点三</li>
+   </ul>
+</body>
+</html>

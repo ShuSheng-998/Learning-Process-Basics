@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed定位</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            height: 1000px;
+            background-color: blue;
+        }
+        .block{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 2px solid black;
+        }
+        .block:nth-child(1){
+            position: absolute;     /* 未制定父元素，则以body为父元素，就以body作定位 */
+            top: 20px;
+            left: 20px;
+        }
+        .block:nth-child(2){
+            position: fixed;        /*fixed：相对于用户的窗口进行定位 */
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">绝对定位</div>
+    <div class="block">固定定位</div>
+</body>
+</html>

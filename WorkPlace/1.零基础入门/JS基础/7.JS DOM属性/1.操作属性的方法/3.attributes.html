@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attributes</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        /*              attributes的特点
+            1.自定义相同的属性名后定义的属性会被前面的覆盖
+            2.属性名最后都会被转化为小写
+            3.返回的是NamedNodeMap类数组对象
+            5.必须用到getNamedItem(或者数组的形式)来访问自定义的属性(显示写出来的)，而固有属性直接用      div.attributes.固有属性
+            4.  
+                (1).attributes返回指定节点的属性集合，
+                (2).nodeValue访问节点的值
+                (3).nodeName访问div的固有属性，即元素的名称
+                (4).getNamedItem("")返回指定字符串中指定的属性节点，
+                (5).removeNamedItem("")删除attributes中的一个属性
+                (6).setNamedItem(属性对象数组):需新创建属性对象，并给value赋值
+        */
+        myReady(function () {
+         var div=document.querySelector("div");
+         console.log(div.attributes.getNamedItem("xxx").nodeValue);
+         console.log(div.attributes["xxx"].nodeValue);
+         console.log(div.nodeName);
+         div.attributes.removeNamedItem("qqq");
+         var attr=document.createAttribute("data-title");
+         attr.value="LBWNB";
+         div.attributes.setNamedItem(attr); 
+        });
+    </script>
+</head>
+<body>
+    <div url="http://www.baidu.com" xxx="aaa" Yyy="bbb" qqq="ccc"></div>
+</body>
+</html>

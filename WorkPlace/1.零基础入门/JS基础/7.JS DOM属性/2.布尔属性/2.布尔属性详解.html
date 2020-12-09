@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttributes</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              selected固有属性的特点
+            1.某个表单元素.selected()=true
+            2.true或者selecteded(任何字符串)都可以，因为有自动的类型转换,值为""或者null时为假
+            3.removeAttribute对selected无操作，无作用
+        */
+
+
+         /*              redOnly固有属性的特点
+            1.某个表单元素.readOnly()=true
+            4.可选中，但无法做修改
+        */
+
+         /*              disabled固有属性的特点
+            1.某个表单元素.disabled()=trrue
+            4.使表单元素不可选中
+            5.即使提交了表单，后台也不会收到
+        */
+
+         /*             multiple固有属性的特点
+            1.select元素.multiple()=true
+            2.上传多个文件在input type="file"里
+            3.removeAttribute对multiple无操作，无作用
+        */
+        /*             hidden固有属性的特点
+            1.表单元素.hidden()=true
+            3.removeAttribute对hidden无操作，无作用
+        */
+        myReady(function () {
+            var city=document.getElementById("city");
+            var options=city.options;
+            console.log(city);
+            options[2].selected="true";  
+
+            var nationality=document.getElementById("nationality");
+            nationality.readOnly=false;
+            nationality.disabled=true;
+            nationality.hidden=false;
+        });
+    </script>
+</head>
+<body>
+    你去过的城市：</br>
+    <select name="city" id="city">
+        <option value="北京">北京</option> 
+        <option value="香港" selected="selected">香港</option>
+        <option value="纽约">纽约</option>
+    </select>
+
+    <input type="text" id="nationality" value="中国" readonly="readonly" disabled="disabled" multiple="multiple" hidden="hidden">
+</body>
+</html>

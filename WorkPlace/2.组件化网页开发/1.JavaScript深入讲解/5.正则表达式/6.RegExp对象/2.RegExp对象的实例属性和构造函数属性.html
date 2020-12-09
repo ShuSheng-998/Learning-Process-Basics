@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp对象的实例属性和构造函数属性</title>
+</head>
+<body>
+    <script>
+    /* 实例属性 */
+        /* 1.ignoreCase、global、multipline
+            此正则是否添加了此模式修饰符，返回布尔值 */
+        var str = "js js js";
+        var pattern =/js/ig;
+        console.log(pattern.ignoreCase);
+        console.log(pattern.global);
+        console.log(pattern.multiline);
+        /* 2.source返回字面量形式的字符串 */
+        console.log(pattern.source);
+        /* 3.lastInde返回全局下的将匹配的位置 */
+        console.log(pattern.lastIndex);
+    /* 构造函数属性 */    
+        /* 1.RegExp.input返回待匹配的字符串($_也可) */
+        var pattern_2 = /(j)s/;
+        pattern_2.exec(str);
+        console.log(RegExp.input);
+        /* 2.RegExp.lastMatch返回最后一次匹配到的字符串(RegExp[$&]也可) */
+        console.log(RegExp.lastMatch);
+        /* 3.RegExp.leftContext返回上一次匹配左边剩余的字符(RegExp[$&]也可) */
+        /* 4.RegExp.rightContext返回上一次匹配右边剩余的字符(RegExp[$&]也可) */
+        console.log(RegExp.rightContext);
+        /* 4.RegExp.paren返回上一次匹配的分组 */
+        /* 5.RegExp.$1返回上一次匹配的第一个分组(数字代表第几个) */
+    </script>
+</body>
+</html>

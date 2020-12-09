@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位置匹配之单词边界匹配</title>
+</head>
+<body>
+    <!-- odd是奇数，even是偶数 -->
+    <p class="odd">1</p>
+    <p class="even">2</p>
+    <p class="odd">3</p>
+    <p class="even">4</p>
+    <script>
+    /* 边界匹配 
+        (1)符号和数字间是边界
+        (2)符号和字符间是边界
+        (3)前后空格是边界
+        */
+        var str = "@@22@@";
+        var pattern = /\b22\b/
+        console.log(pattern.exec(str));
+    
+    /* 在html中的运用
+        例：在低版本中兼容document.getElementsByClassName方法
+         */
+        function getByClassName(className,parentNode){
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(className);
+            }else{
+                parentNode = parentNode||document;
+                var nodeList = [];
+                var allNodes=parentNode.getElementsByTagName("*");
+
+                var pattern = new RegExp("(^|\\s)"+className+"($|\\s)");//  1.className是首项或前面是空格这个正则
+                                                                        //  2.或者：new RegExp("\\b"+className+"\\b")表示单独的一个单词，
+                                                                        //    前后都有边界
+                for(var i=0;i<allNodes.length;i++){
+                    if(pattern.test(allNodes[i].className)){
+                        nodeList.push(allNodes[i]);
+                    }
+                }
+                return nodeList;
+            }
+        }
+        var oddP = getByClassName("odd");
+        var evenP = getByClassName("even");
+        for(var i=0;i<oddP.length;i++){
+            oddP[i].style.backgroundColor="red";
+        }
+        for(var i=0;i<evenP.length;i++){
+            evenP[i].style.backgroundColor="yellow";
+        }        
+    </script>
+</body>
+</html>

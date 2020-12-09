@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #canvas{
+            height: 500px;
+        }
+        ul li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            margin-left: 10px;
+        }
+        ul li:nth-child(1){
+            background: red;
+        }
+        ul li:nth-child(2){
+            background: black;
+        }
+        ul li:nth-child(3){
+            background: yellow;
+        }
+        ul li:nth-child(4){
+            background: greenyellow;
+        }
+        ul li:nth-child(5){
+            background: #abcdef;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas"></div>
+    <ul id="colorChange">
+        <li>红色</li>
+        <li>黑色</li>
+        <li>黄色</li>
+        <li>绿色</li>
+        <li>蓝色</li>
+    </ul>
+    <script>
+        var colorChange=document.getElementById("colorChange");
+        var canvas=document.getElementById("canvas");
+        colorChange.addEventListener("click",function(event){
+           /*  var that=event.target;这样不用每次都解析 */
+            if(event.target.innerHTML=="红色"){
+                canvas.style.background="red";
+            }else if(event.target.innerHTML=="黑色"){
+                canvas.style.background="black";
+            }else if(event.target.innerHTML=="黄色"){
+                canvas.style.background="yellow";
+            }else if(event.target.innerHTML=="绿色"){
+                canvas.style.background="green";
+            }else if(event.target.innerHTML=="蓝色"){
+                canvas.style.background="#abcdef";
+            }
+        })
+    </script>
+</body>
+</html>

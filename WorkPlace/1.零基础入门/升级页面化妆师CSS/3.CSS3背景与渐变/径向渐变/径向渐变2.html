@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div.closest-side{
+            width: 600px;
+            height: 300px;
+            margin: 50px;
+            background: -webkit-radial-gradient(30% 70%,closest-side circle,red,yellow,blue);   
+            background:    -moz-radial-gradient(30% 70%,closest-side circle,red,yellow,blue);
+            background:      -o-radial-gradient(30% 70%,closest-side circle,red, yellow,blue);
+            background:         radial-gradient(30% 70%,closest-side circle,red, yellow,blue);
+            }               /* 百分比为相对于div的位置，先相对于左，后相对于上 */
+        div.farthest-side{
+            width: 600px;
+            height: 300px;
+            margin: 50px;
+            background: -webkit-radial-gradient(30% 70%,farthest-side circle,red,yellow,blue);   
+            background:    -moz-radial-gradient(30% 70%,farthest-side circle,red,yellow,blue);
+            background:      -o-radial-gradient(30% 70%,farthest-side circle,red, yellow,blue);
+            background:         radial-gradient(30% 70%,farthest-side circle,red, yellow,blue);          
+        }
+        div.closest-corner{
+            width: 600px;
+            height: 300px;
+            margin: 50px;
+            background: -webkit-radial-gradient(30% 70%,closest-corner circle,red,yellow,blue);   
+            background:    -moz-radial-gradient(30% 70%,closest-corner circle,red,yellow,blue);
+            background:      -o-radial-gradient(30% 70%,closest-corner circle,red, yellow,blue);
+            background:         radial-gradient(30% 70%,closest-corner circle,red, yellow,blue);         
+        }
+        div.farthest-corner{
+            width: 600px;
+            height: 300px;
+            margin: 50px;
+            background: -webkit-radial-gradient(30% 70%,farthest-corner circle,red,yellow,blue);   
+            background:    -moz-radial-gradient(30% 70%,farthest-corner circle,red,yellow,blue);
+            background:      -o-radial-gradient(30% 70%,farthest-corner circle,red, yellow,blue);
+            background:         radial-gradient(30% 70%,farthest-corner circle,red, yellow,blue);          
+        }
+    </style>
+</head>
+<body>
+    <div class="closest-side"></div>
+    <br>
+    <div class="farthest-side"></div>
+    <br>
+    <div class="closest-corner"></div>
+    <br>
+    <div class="farthest-corner"></div>
+</body>
+</html>

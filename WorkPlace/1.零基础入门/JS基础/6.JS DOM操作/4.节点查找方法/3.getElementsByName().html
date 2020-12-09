@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByName</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*                 类数组对象的动态性
+            1.Nodelist、HTMLColletion、NamedNodeMap三个集合都是动态的，有生命、有呼吸的对象
+            2.他们实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在这些对象中
+            3.每当文档结构发生变化时，他们都会得到更新。因此，他们始终都会保存着最新、最准确的信息
+        */
+        myReady(function () {
+           var myUl=document.getElementsByName("myUl")  /* 返回的是一个NodeList集合,因为name常常是多个 */
+           var citys=document.getElementsByName("city");
+
+           var myDiv=document.getElementById("myDiv");  /* 返回一个Div元素对象 ，因为id常常是一个*/
+           
+           console.log(myUl);
+           console.log(myDiv);
+           console.log(citys);
+        });
+    </script>
+</head>
+<body>
+    北京<input type="checkbox" id="beijing" name="city" value="北京"/>
+    天津<input type="checkbox"  name="city" value="天津"/>
+    上海<input type="checkbox" name="city" value="上海"/>
+    <div id="myDiv">
+        you are my Sunshine.
+        <ul id="myUl" name="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数传递和类型检测</title>
+</head>
+<body>
+    <script>
+    /* 参数传递 */
+
+       /*  1.基本类型传递参数
+            传递的是原数据的值，不是原数据的地址，所以是形式参数
+        */
+        function addTen(num){
+            return num+10;
+        }
+        var score=10;
+        console.log(addTen(score));
+
+        /* 2.引用类型传递参数
+            传递的是对象的引用地址，，导致函数的参数指向同一个位置，如果此时再改变此参数的指向，则改变他不会影响到原数据
+         */
+        function setName(obj){
+            return obj.name="xm";
+        }
+        var person ={};
+        setName(person);
+        console.log(person.name); 
+
+     /* 检测类型 */
+        /* 4 'string' true undefined null [] {} function RegExp(正则表达式) */
+        console.log(typeof 4);//number
+        console.log(typeof "str");//string
+        console.log(typeof true);//boolean
+        console.log(typeof undefined);//undefined
+        console.log(typeof null);//Object
+        console.log(typeof []);//Object
+        console.log(typeof {});//Object
+        console.log(typeof function(){});//function
+        console.log(typeof /a/);//Object
+        
+       /*  判断具体是什么引用类型           instanceof
+            1.语法：前者  instanceof  后者
+            2.功能：判断前者是否是后者的实例(是否由继承的父代和子代)
+        */
+        console.log([] instanceof Array);
+        console.log([] instanceof Object);
+        console.log({} instanceof Object);
+        console.log({} instanceof Array);
+
+        //只能用于基本类型，不能用于基本类型的检测
+        console.log(1 instanceof Number);//基本类型用instanceof一定会返回false
+        console
+    </script>
+</body>
+</html>

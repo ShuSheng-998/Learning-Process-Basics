@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单的转义字符</title>
+</head>
+<body>
+    <script>
+       /*  1.加转义符号\ */
+        var str="//我是注释";
+        var pattern = /\/\//;
+        console.log(pattern.exec(str));
+       /*  2.转义符号也需要转义 */
+       var str_2="\\\\";
+       var pattern_2=/\\\\/;
+       console.log(pattern_2.exec(str_2));
+       /* 3.匹配换行符号 */
+       var str_3="1.html\n2.css\n3.js";
+       var pattern_3 = /\n/;
+       console.log(str_3);
+       console.log(pattern_3.exec(str_3));
+       /* 4.匹配tab键 */
+       var str_4="  js";
+       var pattern_4 = /\u0009/;
+       console.log(pattern_4.exec(str_4));
+    </script>
+</body>
+</html>

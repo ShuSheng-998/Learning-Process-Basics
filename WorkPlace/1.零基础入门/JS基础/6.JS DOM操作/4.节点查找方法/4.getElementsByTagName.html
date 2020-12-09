@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*                 getElementsByTagName根据标签元素的名称获取元素
+            1.Nodelist、HTMLColletion、NamedNodeMap三个集合都是动态的，有生命、有呼吸的对象
+            2.他们实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在这些对象中
+            3.每当文档结构发生变化时，他们都会得到更新。因此，他们始终都会保存着最新、最准确的信息
+        */
+        myReady(function () {
+           var list1=document.getElementsByTagName("li");   /* 返回一个标签元素集合 */
+
+           var list2=document.getElementsByTagName("Li");   /* 不区分大小写 */
+
+           var inputs=document.getElementsByTagName("input");
+           var all=document.getElementsByTagName("*");
+           console.log(list1);
+           console.log(list2.length);
+           console.log(inputs[0].value);    /* 访问元素集合中某个值的value属性的值 */
+            for(var i=0,len=all.length;i<len;i++){
+                console.log(all[i].tagName);
+            }
+        });
+    </script>
+</head>
+<body>
+    <!--这是一段注释-->
+    北京<input type="text"  name="myDiv" value="请输入内容"/>
+  
+    <div id="myDiv">
+        you are my Sunshine.
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>

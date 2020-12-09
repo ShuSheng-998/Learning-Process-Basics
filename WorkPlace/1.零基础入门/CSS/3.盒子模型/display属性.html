@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display属性</title>
+    <style type="text/css">
+        div,span{background-color: #00aaee;
+                border:1px #666 solid}
+        .one{font-size: 0;}
+        div{display: inline-block;            /* 设置为内联元素，元素间无换行符 */
+            font-size:16px;
+            width: 300px;
+            height: 40px;
+            padding: 5px;
+            margin: 10px;}      
+
+        /* span{display: block;            
+            width: 100px;
+            height: 40px;           
+            padding: 5px;
+            margin: 10px;}     */   
+                                             /* 设置为块级元素，元素间有换行符 */
+            span{display: none;}
+            a:hover span{display: inline;}
+    </style>
+</head>
+<body>
+<!-- 块级元素 -->
+    <!-- <div class="one"> -->
+        <div>display属性-div</div>
+        <div>display属性-div</div>
+        <div>display属性-div</div>
+        <div>display属性-div</div>
+        <div>display属性-div</div>
+        <div>display属性-div</div>
+    <!-- </div> -->
+    <hr/>
+<!-- 内联元素 -->
+    <span>display属性-span</span>
+    <span>display属性-span</span>
+    <span>display属性-span</span>
+
+    <a href="#">点我<span>和我捉迷藏</span></a>
+</body>
+</html>

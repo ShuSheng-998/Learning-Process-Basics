@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件周期</title>
+</head>
+<body>
+    <div class="parent" id="parent">
+        <div class="child" id="child">点击儿子</div>
+    </div>
+    <script>
+        //事件捕获
+         //      直系亲属树结构
+        //  html
+        //  body    添加了事件
+        //  parent  添加了事件
+        //  child   有事件   
+        //事件捕获：从上往下依次触发
+        document.getElementById("parent").addEventListener("click",function(e){
+            alert("parent事件被触发，"+this.id);
+        },true);
+        document.getElementById("child").addEventListener("click",function(e){
+            alert("child事件被触发，"+this.id);
+        },true);
+    </script>
+</body>
+</html>

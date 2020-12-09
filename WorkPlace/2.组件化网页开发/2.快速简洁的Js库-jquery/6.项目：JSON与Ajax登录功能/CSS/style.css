@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #333;
+}
+
+.register{
+    width: 400px;
+    height: 370px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px 20px;
+    margin-top: -185px;
+    margin-left: -200px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.title{
+    margin-top: 12px;
+    margin-left: 24px;
+    padding: 8px;
+}
+
+.title > span{
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.title .current{
+    color: red;
+}
+
+.form div{
+    width: 390px;
+    height: 50px;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.form div span {
+    display: inline-block;
+    padding: 16px;
+    color: #666;
+}
+
+.form input{
+    height: 30px;
+    width: 80%;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+.form div i{
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+  
+}
+
+.form div i.ok{
+    background: url(../img/icon.png) no-repeat 0 -67px;
+}
+
+.form div i.no{
+    background: url(../img/icon.png) no-repeat -17px -67px;
+}
+
+.form span.info{
+    display: inline-block;
+    padding: 18px 48px;
+    color: red;
+}
+
+.button a{
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #f20d0d;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.button {
+   margin-top: 24px;
+}

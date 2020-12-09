@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量比较和值的复制</title>
+</head>
+<body>
+    <script>
+     /*相等比较 */
+
+        /* 1.基本类型的比较
+        */
+        var xmScore = 4,
+            xhScore = 4;
+        console.log(xmScore === xhScore);
+
+        /* 2.引用类型比较
+            (1)只有两个值指向同一个空间(引用)时才相等
+        */
+        var xm = {
+            age: 18,
+            score: 4
+        }
+        var xh = {
+            age: 18,
+            score: 4
+        }
+        console.log(xm === xh); //指向不同引用，xm和xh在内存中位置不同
+
+        //判断对象内数据是否相等
+        function equalObjs(a, b) {
+            for (var p in a) {
+                if (a[p] != b[p]) return false;
+            }
+            return true;
+        }
+        console.log(equalObjs(xm, xh));
+
+        //判断数组是否相等
+        function equalArray(a, b) {
+            if (a.length != b.length) return false;
+            for (var i = 0, len = a.length; i < len; i++) {
+                if (a[i] != b[i]) return false;
+            }
+            return true;
+        }
+
+    /* 复制变量的值 */
+
+        /* 1.基本类型的复制
+               (1)只是数据的复制
+         */
+        var lbw = 4;
+        var pdd = lbw;
+        pdd++;
+        console.log(pdd);
+        console.log(lbw);
+
+        /* 2.引用类型的复制
+               (1)是引用地址的复制
+         */
+        var LBW = {
+            age: 20
+        }
+        var PDD = LBW;
+        LBW.age++;
+        console.log(LBW.age);
+        console.log(PDD.age);
+        //如果想只复制引用的值，最好就是遍历(即浅拷贝)
+        function copyObj(obj) {
+            var newObj = {}; //保存新的对象
+            for (var p in obj) {
+                newObj[p] = obj[p];
+            }
+            return newObj;
+        }
+    </script>
+</body>
+</html>

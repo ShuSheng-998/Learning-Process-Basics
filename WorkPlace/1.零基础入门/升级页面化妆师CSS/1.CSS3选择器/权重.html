@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权重</title>
+</head>
+<body>
+    <!--当很多的规则被应用到同一个元素上时，权重是决定哪一种规则生效，或者是优先级的概念-->
+
+
+    <!--行内样式(1000)>ID选择器(100)>类、属性选择器和伪类选择器(10)>元素和伪元素(1)>*通配符(0)-->
+
+
+    <!--带有上下文关系的选择器比单纯的元素选择器权重高
+            section>article{}   比article{}  权重高
+    -->
+
+    <!--同权重下，就近原则-->
+
+    <!---无论多少个元素组成的选择器，都没有一个class选择器的权重高
+            body section article div < lbw(class)
+    -->
+
+
+    <!--通配符选择器的权重为0，被继承的选择器也带有权重，但也为0-->
+</body>
+</html>

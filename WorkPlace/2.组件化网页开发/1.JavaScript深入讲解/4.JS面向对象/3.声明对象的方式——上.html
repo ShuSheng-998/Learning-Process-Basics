@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明对象的方式——上</title>
+</head>
+<body>
+    <script>
+        /* 1.直接var(字面式)        
+         */
+         var person = {
+             name:"卢本伟",
+             weapon:"平底锅",
+             DEDEDE:function(){
+                alert("得得得得得得得")
+             }
+         }
+        /*  2.new操作符后跟Object构造函数 */
+         var box = new Object();
+         box.name="PDD";
+         box.weapon = "蛇皮";
+         box.infos=function(str){
+             alert(person.name+"str  "+this.name);//this指向当前的对象
+         }
+        /* 3.构造函数 */
+        //函数内部只能用this访问属性和方法
+         function person_2(name,sex,age){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.show=function(){}
+         }
+         var obj_1=new person_2("大司马","男",18);
+         /* 构造方式和工厂方式的区别
+                1.构造方式不会显示创建对象，而是将属性赋值给this，不需要return对象 
+                2.工厂方法在内部创建object对象，返回object对象，属性和对象都是赋给object的
+        */
+    </script>
+</body>
+</html>

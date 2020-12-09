@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #eee;
+        }
+
+        #calculator {
+            margin: 20% 0 0 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 简易计算器 -->
+    <div id="calculator">
+        <p>
+            <input type="text" class="formerInput" value="1">
+            <span class="sign">+</span>
+            <input type="text" class="laterInput" value="1">
+            <span>=</span>
+            <span class="resultOutput">2</span>
+        </p>
+        <p>
+            <input type="button" value="+" class="btn" title="add">
+            <input type="button" value="-" class="btn" title="subtract">
+            <input type="button" value="x" class="btn" title="multiply">
+            <input type="button" value="÷" class="btn" title="divide">
+            <input type="button" value="%" class="btn" title="mod">
+            <input type="button" value="^" class="btn" title="power">
+        </p>
+    </div>
+    <script>
+        //模块化,匿名函数自执行
+        (function () {
+            /* 获取DOM元素 */
+            /* var calculator=document.querySelector("#calculator");
+                var formerInput=calculator.querySelector(".formerInput");
+                var sign=calculator.querySelector(".sign");
+                var laterInput=calculator.querySelector(".laterInput");
+                var resultOutput=calculator.querySelector(".resultOutput");
+                var btns=calculator.querySelectorAll(".btn");
+                
+                里面的DOM元素都是属于计算器这个下面包裹的，所以让他们成为这个计算器的属性
+                */
+            var wrapElem = document.querySelector("#calculator");
+            var calculatorElem = {
+                formerInput: wrapElem.querySelector(".formerInput"),
+                sign: wrapElem.querySelector(".sign"),
+                laterInput: wrapElem.querySelector(".laterInput"),
+                resultOutput: wrapElem.querySelector(".resultOutput"),
+                btns: wrapElem.querySelectorAll(".btn")
+            }
+            /* 绑定事件 */
+            //回调函数
+            function each(array, fn) {
+                for (var i = 0, len = array.length; i < len; i++) {
+                    fn(i, array[i]);
+                }
+            }
+            each(calculatorElem.btns, function (index, elem) {
+                elem.onclick = function () {
+                    updateSign(this.value);
+                    OutputResult(operate(this.title, calculatorElem.formerInput.value, calculatorElem
+                        .laterInput
+                        .value));
+                }
+            });
+           
+            //更新操作符
+            function updateSign(symbol) {
+                calculatorElem.sign.innerHTML = symbol;
+            }
+            //输出结果
+            function OutputResult(result) {
+                calculatorElem.resultOutput.innerHTML = result;
+            }
+            //运算操作定义为模块化，匿名函数自执行，但是暴露接口给外面调用
+            var operate=(function () { 
+                var operation = {
+                    //加法
+                    add: function (num1, num2) {
+                        return +num1 + +num2;
+                    },
+                    //减法
+                    subtract: function (num1, num2) {
+                        return num1 - num2;
+                    },
+                    //乘法
+                    multiply: function (num1, num2) {
+                        return num1 * num2;
+                    },
+                    //除法
+                    divide: function (num1, num2) {
+                        return num1 / num2;
+                    },
+                    //添加新方法
+                    addOperation: function (name, fn) {
+                        if (!operation[name]) {
+                            operation[name] = fn;//this[name]改为operation[name]，因为operate.addOperation=operation.addOperation，
+                                                    //operate在调用的时候用this[]name实际上是operate[name]，但是operate没有这个属性
+                        }
+                        return this; //链式调用
+                    }
+                }
+                function operate(name) {
+                    if (!operation[name]) throw new Error("不存在名为" + name + "的方法");
+                    console.log([].slice.call(arguments,1,arguments.length));
+                    return operation[name].apply(operation,[].slice.call(arguments,1,arguments.length));
+                }
+                operate.addOperation=operation.addOperation;//当某个函数要调用某个对象的方法时，必须在这个对象的 后面定义这个函数
+                return operate;
+            })();
+             //链式调用
+             operate.addOperation("mod", function (num1, num2) {
+                return num1 % num2;
+            }).addOperation("power", function (base, power) {
+                return Math.pow(base, power);
+            });
+        })();
+    </script>
+</body>
+
+</html>

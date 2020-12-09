@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding:0 ;
+}
+
+a{
+    text-decoration: none;
+}
+a:link,a:visited{
+    color: #5e5e5e;
+}
+
+@font-face{
+    font-family: "iconfont";
+    src: url("../img/font/iconfont.eot");
+    src: url("../img/font/iconfont.eot")  format("embedded-opentype"),
+         url("../img/font/iconfont.woff")  format("woff"),
+         url("../img/font/iconfont.ttf")  format("truetype"),
+         url("../img/font/iconfont.svg#iconfont")  format("svg");
+}
+body{
+    font-family: "微软雅黑";
+    color: #14191e; 
+}
+
+.main{
+    width: 1200px;
+    height: 460px;
+    margin:30px auto ;      /* 居中对齐 */
+    overflow: hidden;
+    position: relative;
+}
+
+.banner{
+    width: 1200px;
+    height: 460px;
+    overflow: hidden;
+}
+
+.banner-slide{
+    width: 1200px;
+    height: 460px;
+    float: left;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.slide_1{
+    background-image: url(../img/bg1.jpg);
+}
+.slide_2{
+    background-image:url(../img/bg2.jpg);
+}
+.slide_3{
+    background-image: url(../img/bg3.jpg);
+}
+.slide_active{
+    display: block;
+}
+
+.button{
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    left: 244px;
+    top: 50%;
+    margin-top: -40px;
+    background: url(../img/arrow.png) center center no-repeat;
+    transform: rotate(180deg);
+}
+.button:hover{
+    background-color: #333;
+    opacity: 0.6;
+    filter: alpha(opacity=60);  /* 照顾IE浏览器 */
+}
+
+.next{
+    left: auto; /* button类和next类都在设置这个元素，button类设置了左对齐为244px，如果只是再定义right为0，
+                    浏览器会优先考虑left(244px)，所以要重置left为auto，设置右为0 */
+    right: 0;       
+    transform: rotate(0deg);
+}
+
+.dots{
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    line-height: 12px;
+}
+
+.dots span{
+    display: inline-block;/* 显示在统同一水平线上 */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(7,17,27,0.4);
+    margin-left: 8px;
+    /* 不是实现阴影效果而是实现圆环的描边用阴影(box-shadow)实现 */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset;
+    /* 水平方向，垂直方向，模糊度，阴影尺寸,阴影的颜色 ,出现在里面*/
+    cursor: pointer;
+}
+
+.dots span.active{
+    background-color: #fff;
+    box-shadow:  0 0 0 2px rgba(7,17,27,0.4) inset;
+}
+
+/* 菜单 */
+.menu-box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 244px;
+    height: 460px;
+    background: rgba(7, 17, 27,0.3);
+    z-index: 1;
+}
+
+/* 主菜单 */
+.menu-content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 244px;
+    height: 460px;
+    z-index: 2;
+}
+
+.menu-item{
+    /* 宽高继承了menu-content的宽高 */
+    height: 64px;
+    line-height: 66px;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0 24px;
+}
+
+.menu-item a{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.2) ;
+    /* 边框不定义在menu-item上，因为定义在menu-item上就会占满整个盒子，而定义在a上，会因为menu-item有padding的原因，
+    a的内容靠中，和两边有距离，所以定义的border也会和两边有距离 */
+    padding: 0 8px;
+    position: relative;
+}
+
+.menu-item:last-child a{
+     border-bottom: none;
+}
+
+.menu-item i{
+    position: absolute;
+    right: 32px;
+    top: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: normal;
+    font-weight: normal;
+    font-family: "iconfont";
+    font-size: 32px;
+}
+
+.sub-menu{
+    width: 730px;
+    height: 458px;
+    z-index: 500;
+    position: absolute;
+    left: 244px;
+    top: 0px;
+    background: #fff;
+    border: 1px solid #d9dde1;
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+}
+
+.inner-box{
+    width: 100%;
+    height: 100%;
+    background: url(../img/fe.png) no-repeat; 
+    display: none;
+}
+
+.sub-inner-box{
+    width: 652px;
+    margin-left: 40px;
+    overflow: hidden;
+}
+
+.title{
+    font-size: 16px;
+    color: #f01414;
+    line-height: 16px;
+    font-weight: bold;
+    margin: 28px 0px 30px 0px;
+}
+
+.sub-row{
+    margin-bottom: 25px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.mr10{
+    margin-right: 10px;
+}
+
+.ml10{
+    margin-left: 10px;
+}
+.hide{
+    display: none;
+}

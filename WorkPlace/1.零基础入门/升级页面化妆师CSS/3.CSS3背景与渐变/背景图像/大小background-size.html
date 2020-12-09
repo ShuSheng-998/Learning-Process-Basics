@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-size</title>
+    <style type="text/css">
+        div{
+            width: 800px;
+            height: 500px;
+            background: url(./img/bg1.jpg) no-repeat;
+            background-size: 100%;                      /* 未设置第二个高度时为auto */
+
+            background-size: 100% 100%;                /*  铺满 */
+
+            background-size: 50%;                       /* 宽度一般，高度自动 */
+
+            background-size: 50% 50%;                    /* 宽高皆为50% */
+
+            background-size: 600px;                        /*  宽600px，高度自动 */
+
+            background-size: cover;                     /* 将背景图片等比缩放以填满整个容器 */
+
+            background-size: contain;                  /*  将背景图片等比缩放至某一边紧贴容器边缘为止 */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

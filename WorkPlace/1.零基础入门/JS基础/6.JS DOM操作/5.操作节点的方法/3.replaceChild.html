@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+           /*                       cloneNode
+                1.语法：Element.replaceChild(要插入的节点，被替换的节点) 
+                2.功能：用新节点替换某个子节点
+                3.返回值：被替换的节点 
+            */
+            var myUl=document.getElementById("myUl");
+            var txt=document.createTextNode("4")
+            var linew=document.createElement("li");
+            linew.appendChild(txt);
+            var li2=myUl.children[1];
+            myUl.replaceChild(linew,li2);
+        });
+    </script>
+</head>
+<body>
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</body>
+</html>
+ 

@@ -1,0 +1,26 @@
+/*标签选择器
+p,h2,h3{font-size: 30px;color: blue;}
+p{
+    color:red;
+    font-family: "隶书";}
+*/
+
+/*类选择器*/
+.special{font-size: 30px;}         /*识别Class名和ID名时区分大小写*/
+p.special{ color: red;}
+.one{text-decoration:underline ;}           /*文字修饰属性*/
+
+/*ID选择器*/
+#two{color:green}
+                /*在一个html文件中式唯一的*/
+
+/*群组选择器*/
+p.special,#three{font-size: 50px;} 
+
+/*全局选择器*/
+*{text-decoration: underline;}
+
+/*后代选择器*/
+p em{color:blue}
+h1.special em{color:orange}
+h1#two em{font-size: 50px;}

@@ -1,0 +1,20 @@
+<link rel="icon" href="icon.gif" type="image/gif" sizes="16*16">            <!--link中的sizes属性设置网址前图标 -->
+
+
+
+
+<base target="http://localhost/" target="_blank">               <!--base写在<head>和</head>之间-->
+base下的target使网页内的所有跳转都基于新的页面
+
+
+
+
+<a media=""></a>            表示对设备进行优化，handheld对“手持”设备进行支持，tv对“电视”设备进行支持
+
+
+
+
+<a hreflang="zh"></a>           目标页面的语言是什么，这里是中文
+
+
+<a rel="external"></a>             一个说明文档，是对超链接的一个语义化的说明，说明是外部链接 

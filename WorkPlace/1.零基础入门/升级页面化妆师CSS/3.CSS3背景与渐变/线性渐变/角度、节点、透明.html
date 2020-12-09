@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角度、节点、透明</title>
+    <style type="text/css">
+        div{
+            width: 800px;
+            height: 500px;
+            
+            background:         linear-gradient(45deg,red, yellow, blue);   
+            /* 角度：上0deg，右90deg，下180deg，左-90deg  */
+
+            background:         linear-gradient(90deg,red 10%,orange 15%,yellow 20%,green 50%,
+            blue 70%,indigo 80%,violet 100%);
+            /* 两个节点之间的距离，是前者到后者的渐变占整个宽度的百分比 */
+            /* 第一个不写默认0%，最后一个不写默认100% ,语法错误转为默认从上到下的模式*/
+
+
+            background:         linear-gradient(90deg,rgba(255,0,0,0),rgba(255,0,0,1))
+            /* 透明渐变 */
+        }       
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

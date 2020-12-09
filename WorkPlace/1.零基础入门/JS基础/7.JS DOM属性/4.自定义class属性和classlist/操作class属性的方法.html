@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attributes</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              data属性
+           1.以data-来开头
+           2.用于存储页面或者应用程序的私有定义的属性
+
+        */
+        var CC={
+            getClass:function(ele){
+                return ele.className.replace(/\s+/," ").split(" ");     /* 将字符串分割成数组返回 */
+            },
+
+            hasClass:function(ele,cls){
+                return -1<(" "+ele.className+" ").indexOf(" "+cls+" ");     /* 添加的空格方便用户多打空格也能识别出class */
+            },
+
+            addClass:function(ele,cls){
+                if(!this.hasClass(ele,cls)){        /* 先判断有无 */
+                    ele.className+=" "+cls;        /*  再添加字段 */
+                }
+            }
+        }
+        myReady(function () {
+            var body=document.body;        
+            console.log(CC.getClass(body));
+            console.log(CC.hasClass(body,"aaa"));
+            CC.addClass(body,"ddd");                
+        });
+    </script>
+</head>
+<body class="aaa bbb  ccc">
+   
+</body>
+</html>

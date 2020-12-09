@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Css_outerStyle.css" rel="stylesheet" type="text/css"/>      <!--页面加载时同时加载Css样式-->
+    <!--
+        1.html与Css分离
+        2.多个文件可以使用同一个样式
+        3.多文件引用同一个Css文件，Css只需下载一次
+    -->
+    
+    
+    
+    <!--
+    1.嵌入样式
+    <style type="text/css">
+        p,h2{color: blue;font-size: 20px;}
+    </style>
+    2.
+    <style type="text/css">
+        @import url(外部文件的地址)                
+    <style/>                               --再读取完html文件后加载，当页面加载很慢的时候可能会出现某些组件无样式的情况，也有浏览器兼容性问题
+    -->
+</head>
+<body>
+<!--行内样式-->
+<p style="font-size: 20px;color:red;">CSS使用方法</p>   <!--不建议大量使用，会导致代码冗余，回鹘成本升高-->
+<!--嵌入样式-->
+<h2>CSS使用方法</h2>
+<p>行内样式</p>
+<p>嵌入样式</p>
+<p>外部样式</p>
+<p>导入样式</p>
+</body>
+</html>
+
+<!--样式优先级-->
+<!--行内样式>嵌入样式（style里的p{}和@import）>外部样式（<link href="" rel="" type=""/>）-->
+<!--链入外部式与嵌入样式之间的优先级取决于所处位置，就近原则-->

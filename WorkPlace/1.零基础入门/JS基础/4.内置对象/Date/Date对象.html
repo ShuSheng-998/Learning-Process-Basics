@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date对象</title>
+</head>
+<body>
+    <script>
+        /*                  Date对象
+            语法：new Date();                   
+            功能:创建一个日期事件对象
+            返回值：不传参的情况下，返回当前的日期使劲按对象
+        */
+        var today=new Date();
+        console.log(today)
+
+        /*                 获取年月时分秒及星期的方法
+           1.getFullYear()：返回4位数的年份         setFullYear()
+           2.getMonth()：返回日期中的月份，返回值为0-11
+           3.getDate()：返回月份中的天数
+           4.getDay()：返回星期，返回值为0-6
+           5.getHours()：返回小时
+           6.getMinutes()：返回分
+           7.getSeconds()：返回秒
+           8.getTime()：返回表示日期的毫秒数    从1970年1月1日00:00:00开始到现在的毫秒数
+        */
+        var weeks=["日","一","二","三","四","五","六"]
+        var year=today.getFullYear(),
+            month=today.getMonth(),
+            date=today.getUTCDate(),
+            week=today.getDay(),
+            hour=today.getHours(),
+            minute=today.getMinutes(),
+            seconds=today.getSeconds(),
+            time=year+'年'+month+'月'+date+'日'+hour+'点'+minute+'分'+seconds+'秒'+'  星期'+weeks[week];
+            console.log("现在是"+time);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qq号、昵称和密码</title>
+</head>
+<body>
+    <script>
+    /* 1.QQ号 
+            (1)首位不能为0
+            (2)最少5位
+            (3)最多11位
+        */
+        var pattern_qq=/^[1-9]\d{4,}$/
+    /* 2.昵称
+            (1)中、英文、数字以及下划线
+            (2)2-18位
+         */
+        /* var pattern_name = /^[\u4e00-\u9fa5a-zA-Z0-9_]{2,18}$/  */
+        var pattern_name = /^[\u4e00-\u9fa5\w]{2,18}$/;
+    /* 3.密码的匹配
+            (1)6-16位
+            (2)不能用空白字符(自带)
+            (3)区分大小写
+      */
+        var pattern_password = /^\s{6,16}&/;
+    </script>
+</body>
+</html>

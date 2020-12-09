@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin属性</title>
+    <style type="text/css">
+/* 设置上下左右的margin */
+       /*  .one{width: 300px;height: 300px;background-color: #acacac;
+        margin-top: 10px;margin-right: 5px;margin-bottom: 8px;margin-left:20px ;
+        margin:10px 20px 10px 20px
+        } */   
+
+/*设置margin成auto以达到自动居中的效果*/       
+        /* .one{width: 300px;height: 300px;background-color: #acacac;
+            margin:auto;}               
+        .content{width: 100px;height: 100px;background-color: #ececec;
+            margin:auto;} */
+
+/* 设置垂直方向的外边距时，两个元素都设置了外边距，外边距会发生合并，取两者的最大值 */
+        .content{width: 100px;height: 100px;background-color: #ececec;margin:auto;}    
+        .one{width: 300px;height: 300px;background-color: #acacac;margin-bottom: 20px;}
+        .two{width: 300px;height: 300px;background-color: #acacac;margin-top: 10px;}
+    </style>
+</head>
+<body>
+    <div class="one"><div class="content">margin属性</div></div>
+    <div class="two"><div class="content">margin属性</div></div>
+</body>
+</html>

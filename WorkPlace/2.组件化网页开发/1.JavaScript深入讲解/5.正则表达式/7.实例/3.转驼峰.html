@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转驼峰</title>
+</head>
+
+<body>
+    <script>
+        var str = "background-color";
+        var pattern = /-([a-z])/gi;
+        console.log(str.replace(pattern, function (all, letter) {
+            //all是匹配到的所有内容,正则中多一个分组，这个function就多一个参数，letter是第一个括号的内容
+            console.log(all + "  " + letter);
+            return letter.toUpperCase();
+        }))
+
+        //自己封装转驼峰方法
+        function toCamelCase(str) {
+            return str.replace(pattern, function (all, letter) {
+                return letter.toUpperCase();
+            });
+        }
+    </script>
+</body>
+
+</html>

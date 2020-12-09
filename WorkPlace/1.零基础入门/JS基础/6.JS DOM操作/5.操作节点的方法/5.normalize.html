@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+           /*                       normalize
+                1.语法：Element.normalize()
+                2.功能：合并相邻的txt节点
+            */
+
+            /* childNodes是一个NodeList,children是一个HTMLCollection */
+           var div=document.createElement("div");
+           var tex_1=document.createTextNode("DOM探索");
+           div.appendChild(tex_1);
+
+           var tex_2=document.createTextNode("之节点操作篇");
+           div.appendChild(tex_2);
+           document.body.appendChild(div);
+
+           console.log(div.childNodes.length);
+           div.normalize();
+           console.log(div.childNodes.length);
+           console.log(div.childNodes[0]);
+           console.log(div.firstChild.nodeValue);
+        });
+    </script>
+</head>
+<body>
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</body>
+</html>
+ 

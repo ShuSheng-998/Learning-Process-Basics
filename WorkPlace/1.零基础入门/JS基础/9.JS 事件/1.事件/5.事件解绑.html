@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--                      DOM事件流
+        1.移除事件：
+            removeEventListener()
+        2.语法：element.removeEventListener(event,function,useCapture)
+        3.功能：移除addEventListener方法添加的事件句柄。
+        参数：
+            (1)必须。字符串，要移除的事件名称。
+            (2)必须。指定要移除的函数。不能使用匿名函数。
+            (3)可选。布尔值，指定移除事件句柄的阶段。
+    -->
+    <button id="btn_2">DOM2级事件的绑定</button>
+    <script>
+        var btn_2=document.getElementById("btn_2");
+        var DOM2=function(){
+            alert("DOM2级事件的绑定方式")
+        }
+        btn_2.addEventListener("click",DOM2,false);
+       //事件解绑
+       btn_2.removeEventListener("click",DOM2,false);
+       //事件成功的主要原因就是保证addEventLstener和removeEventListner里的参数是一致的。
+    </script>
+</body>
+</html>

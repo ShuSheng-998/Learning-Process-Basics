@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+      <!--                键盘事件与keycode属性
+            1.onkeydoown：在用户按下一个键盘按键时发生
+            2.onkeypress：在按下键盘按键时发生(只会响应字母与数字符号)
+            3.onkeyup在键盘按键被松开时发生
+                键盘事件触发顺序
+                    a.onkeydown
+                    b.onkeypress
+                    c.onkeyup
+            4.keycode：返回onkeydown、onkeypress、onkeyup事件触发的键的值的字符代码，或键的代码（想知道按下的是哪个键）
+     -->
+     <style>
+         .text_1{
+             font-weight: bold;
+             color: #ccc;
+             font-size: 14px;
+         }
+         em{
+             font-style: normal;
+         }
+         .input{
+             width: 500px;
+             height: 68px;
+             position: relative;
+         }
+         .count{
+            font-weight: bold;
+            color: #ccc;
+            font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 5px;
+         }
+     </style>
+</head>
+<body>
+    <div>
+        <!-- <p class="text_1"><span><em id="count">30</em>/30</span></p> -->
+        <div class="input">
+            <textarea name="" id="text" cols="70" rows="4"></textarea>
+            <div class="count">
+                <span><em id="count">30</em>/30</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        //event代表事件的状态，如触发event对象的元素、鼠标的位置及状态等
+
+        //在事件触发的function里，用一个参数接受事件对象
+       /*  document.onkeydown=function(event){
+            console.log(event.keyCode);
+        } */
+        var inputInfo=document.getElementById("text");
+        var count=document.getElementById("count");
+        var total=30;
+        document.onkeyup=function(){
+            //获取文本框值得长度
+            var len=inputInfo.value.length;
+            //还允许输入多少个字符
+            var allow=total-len;
+            count.innerHTML=allow;
+        }
+    </script>
+</body>
+</html>

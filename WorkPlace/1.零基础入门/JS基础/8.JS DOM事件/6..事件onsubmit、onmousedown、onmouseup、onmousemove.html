@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!--                onsubmit事件的用处
+            1.表单中的确认按钮被点击时发生
+            2.onsubmit不是加载按钮上而是加在表单上
+     -->
+
+     <!--                onmousedown事件的用处
+            1.鼠标按钮在元素上按下鼠标时触发的
+     -->
+
+      <!--                onmouseup事件的用处
+            1.鼠标按钮在元素上松开鼠标时触发
+     -->
+
+      <!--                onmousemove事件的用处
+            1.鼠标指针移动时触发 
+     -->
+
+      <!--                onresize事件的用处
+            1.在调整浏览器窗口大小时触发 
+     -->
+
+     <!--                onscroll事件的用处
+            1.在拖动滚动条滚动时触发
+     -->
+     <style>
+         .box{
+             width: 200px;
+             height: 200px;
+             background: #abcdef;
+
+         }
+     </style>
+</head>
+<body>
+    <div class="box" id="box">拖动</div>
+    <script>
+        var box=document.getElementById("box");
+        //绑定按下的事件
+        box.onmousedown=function(){
+            console.log("我被嗯下了")
+        }
+        //绑定移动的事件
+        box.onmousemove=function(){
+            console.log("鼠标在我里面移动");
+        }
+        //绑定松开的事件
+        box.onmouseup=function(){
+            console.log("已经松开了");
+        }
+        //绑定点击事件
+        box.onclick=function(){
+            console.log("我被点击了");
+        }
+    </script>
+</body>
+</html>

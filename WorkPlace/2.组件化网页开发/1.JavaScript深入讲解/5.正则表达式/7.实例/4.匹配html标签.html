@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匹配html标签</title>
+</head>
+<body>
+    <!-- 匹配html标签 -->
+    <script>
+        var  str = "<p class='odd' id='odd'>123</p>";
+        //正向思考
+        var pattern = /<\/?[a-zA-Z]+(\s+[a-zA-Z]+='.*')*>/g
+        //逆向思考
+        var pattern_back = /<[^>]+>/g
+        console.log(str.match(pattern_back));
+    </script>
+</body>
+</html>

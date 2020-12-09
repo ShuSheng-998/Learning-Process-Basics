@@ -1,0 +1,87 @@
+
+			//鼠标事件
+			var myBtn = document.getElementById("myBtn");
+			//EventUtil.addHandler(myBtn, "click", function(event){
+
+			//})
+			//EventUtil.addHandler(myBtn, "dblclick", function(event){
+			//alert(111111)
+			//})
+			//鼠标按下时候触发的事件
+			//EventUtil.addHandler(myBtn, "mousedown", function(event){
+			//alert("mousedown");
+			//console.log(event.button)   //区分浏览器
+			//console.log("mousedown")
+			//})
+			//EventUtil.addHandler(myBtn, "mouseup", function(event){
+			//console.log("mouseup")
+			//})
+
+			//mousedown+mouseup=click
+
+			//EventUtil.addHandler(myBtn, "mousemove", function(event){
+			//console.log("mousemove")
+			//})
+			//			//离开目标元素的时候执行
+			//			EventUtil.addHandler(myBtn, "mouseout", function(event){
+			//				console.log("mouseout")
+			//			})
+			//			//进入目标元素的时候执行
+			//			EventUtil.addHandler(myBtn, "mouseover", function(event){
+			//				console.log("mouseover")
+			//			})
+			//			//只能进入目标元素时候才去触发
+			//			EventUtil.addHandler(myBtn, "mouseenter", function(event){
+			//				console.log("mouseenter")
+			//			})
+			//			//只能离开目标元素时候才去触发
+			//			EventUtil.addHandler(myBtn, "mouseleave", function(event){
+			//				console.log("mouseleave ")
+			//			}) 
+			//			var div = document.getElementById("div");
+			//			//离开目标元素或者其子元素的时候执行
+			//			EventUtil.addHandler(div, "mouseout", function(event){
+			//				console.log("mouseout")
+			//			})
+			//			//进入目标元素或者其子元素的时候执行
+			//			EventUtil.addHandler(div, "mouseover", function(event){
+			//				console.log("mouseover")
+			//			})
+			//			//只能进入目标元素时候才去触发
+			//			EventUtil.addHandler(div, "mouseenter", function(event){
+			//				console.log("mouseenter")
+			//			})
+			//			//只能离开目标元素时候才去触发
+			//			EventUtil.addHandler(div, "mouseleave", function(event){
+			//				console.log("mouseleave ")
+			//			}) 
+			//			var div = document.getElementById("myDiv");
+			//			EventUtil.addHandler(div, "clcik", function(event) {
+			//				var keys = new Array();
+			//				if(event.shiftKey) {
+			//					keys.push("shift");
+			//				}
+			//				if(event.ctrlKey) {
+			//					keys.push("ctrl");
+			//				}
+			//				if(event.altKey) {
+			//					keys.push("alt");
+			//				}
+			//				if(event.metaKey) {
+			//					keys.push("meta");
+			//				}
+			//				console.log("keys:" + keys.join(","));
+			//			});
+			EventUtil.addHandler(myBtn, "mousedown", function(event) {
+				console.log("mousedown");
+				console.log(event.button) //区分浏览器
+				// event.button == 0 鼠标左键
+				//event.button == 1 鼠标中键
+				//event.button == 2 鼠标右键
+				
+				//IE8派系
+				// event.button == 0 没有按下按钮
+				//event.button == 1 按下主鼠标按钮
+				//event.button == 2 按下次鼠标按钮
+				//event.button == 3 按下同时按下主、次鼠标按钮
+				//event.button == 4 按下中间鼠标按钮

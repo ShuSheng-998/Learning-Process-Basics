@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+           /*                       removeChild
+                1.语法：Element.removeChild(从哪个位置开始分割)
+                2.功能：删除某个节点中的指定子节点
+                3.返回值：返回新的文本节点，位置在新的节点后面
+            */
+            var myUl=document.getElementById("myUl");
+            myUl.parentNode.removeChild(myUl);
+            console.log(myUl.id+":"+myUl.innerHTML);
+            var myUl_2=document.getElementById(myUl_2);
+            myUl_2.parentNode.innerHTML="";
+            console.log(myUl_2.id+':'+myUl_2.innerHTML);    /* 在ie6-ie8下innerHTML会把节点掰下来烧掉，chrome不会
+                                                                removeChild只会拔下来，但还可以使用         */
+        });
+    </script>
+</head>
+<body>
+    <ul id="myUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+        
+    <ul id="myUl_2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>
+ 

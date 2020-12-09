@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attributes</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              data属性
+           1.以data-来开头
+           2.用于存储页面或者应用程序的私有定义的属性
+
+        */
+        myReady(function () {
+            var btn=document.getElementById("btn");
+            console.log(btn.dataset.toggle);           /* 当data-后时一个单词的时候直接通过".属性名"来获得值*/
+            console.log(btn.dataset.xxxYyy);                             /* 当data-后多个单词的时候用驼峰式连接属性名来获得值*/
+        });
+    </script>
+</head>
+<body>
+    <button id="btn" type="button" data-xxx-yyy="avcc" data-toggle="modal">Small modal</button>
+</body>
+</html>

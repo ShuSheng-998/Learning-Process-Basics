@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型和堆栈</title>
+</head>
+<body>
+    <script>
+        /* 1.类型 */
+        //基本类型： 4 str true/false  undefined  null
+        //引用类型：[]数组   {}对象
+
+        /* 2.区别： */
+        /* 
+            (1)基本类型的值不可修改，引用类型的值可修改,
+            (2)引用类型由基本类型构成
+            (3)所有的字符串方法都不会修改原来的值，而是返回新的东西
+         */
+        var num = 4;
+        num = 3//这是覆盖，不是修改
+
+        var str = "string";
+        var anotherStr=str.replace("s","");
+        console.log(str+"|"+anotherStr);
+
+        /*3.为什么基本类型的数据可以调用方法而不能添加属性
+            (1)任何基本数据类型调用方法都会去找他的包装对象(js内置的),再借用   
+                如：4->Number   str->String
+         */
+
+        /*4.堆栈的概念
+            (1)栈内存：由下往上，有序排列，存储变量
+                ***保存基本类型
+                缺点：大小固定，不可扩建
+            (2)堆内存：不连续的空间
+                ***保存引用类型
+                方式：为了找到对应的数据
+                1.在堆内存中开辟空间用于存储数据
+                2.在栈内存中开辟空间存储对应数据的地址(指向堆内对应的数据)，用于寻找到此数据
+         */
+            
+    </script>
+</body>
+</html>

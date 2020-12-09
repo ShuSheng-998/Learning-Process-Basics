@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html事件</title>
+    <!-- 事件就是浏览器窗口中发生的一些特定的监护瞬间 -->
+    <style>
+        .btn{
+            width: 140px;
+            height: 30px;
+            line-height: 30px;
+            background: #abcdef;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+   <!--                        HTML事件
+        1.定义：直接再HTML元素标签内添加事件，执行脚本。
+        2.语法：<tag 事件="执行脚本"></tag>
+        3.功能：再HTML元素上绑定事件
+        4.说明：执行脚本可以是一个函数的调用或js代码
+        5.鼠标事件
+            (1)onclick:鼠标点击时触发
+            (2)onmouseover：鼠标滑过时触发
+            (3)onmouseout：鼠标离开时触发
+            (4)onfoucs：获得焦点时触发
+            (5)onblur：失去焦点时触发
+            (6)onchange：域的内容改变时触发
+   -->
+
+   <script>
+       function mouseoverFn(btn,bgcolor){
+            //鼠标滑过按钮时，背景变为红色
+            btn.style.background=bgcolor; 
+       }
+       function mouseOutFn(btn,bgcolor){
+           btn.style.background=bgcolor;
+       }
+   </script>
+   <input type="button" value="弹出" onclick="alert('我是按钮')"> 
+   <div class="btn" onmouseover="mouseoverFn(this,'#f00')" onmouseout="mouseOutFn(this,'#abcdef')">开始</div>
+   <div class="btn" onmouseover="mouseoverFn(this,'#0f0')" onmouseout="mouseOutFn(this,'#333')">结束</div>
+    <!-- 
+        1.鼠标滑过按钮时调用mouseoverFn()
+         2.this是这个标签元素的DOM对象
+    -->
+</body>
+</html>

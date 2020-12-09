@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位置匹配之单词前瞻性匹配和负向前瞻性匹配</title>
+</head>
+<body>
+    <script>
+        /* 前瞻性匹配
+                /java(?=script)/            只有当java后面跟的是script时才匹配这个字符串
+         */
+        var str = "javascript";
+        var pattern = /java(?=script)/;
+        console.log(pattern.exec(str));
+        
+        /* 负前瞻性匹配
+                /java(?！script)/            只有当java后面跟的不是是script时才匹配这个字符串
+         */
+         var str_2 = "javacript";
+        var pattern_2 = /java(?!script)/;
+        console.log(pattern_2.exec(str_2));
+        
+    </script>
+</body>
+</html>

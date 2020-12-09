@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box_1{
+            height: 400px;
+            background: #ccc;
+        }
+        .box_2{
+            height: 600px;
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <!--        location.href属性
+        1.语法：location.href
+        2.功能：返回当前页面的完整URL
+        3.说明：location.href与window.location.href完全等价
+        4.语法：location.hash返回URL中的hash(#后跟0或多个字符)，如果不包含则返回空字符(锚点)
+    -->
+    <div class="box_1" id="top"></div>
+    <div class="box_2"></div>
+    <input type="button" id="btn" value="返回顶部">
+    <script>
+        console.log(location.href);
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click",function(){
+            location.hash="#top";
+        })
+    </script>
+</body>
+</html>

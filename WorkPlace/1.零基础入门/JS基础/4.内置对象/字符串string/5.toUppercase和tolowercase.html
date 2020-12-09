@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toUppercase和toLowercase</title>
+</head>
+<body>
+    <script>
+        var str="hello word";
+        var str2=str.toUpperCase();     /* 返回的是str的副本，原str未作改变 */
+        console.log(str2);
+
+        /* 传入css式的属性明，返回驼峰式命名 */
+        function camelback(str){
+            var arr=str.split("-");                                      /* 1.将字符串分成字符串转数组 */
+            var newstr=arr[0];
+            for(var i=1;i<arr.length;i++){
+                var word=arr[i];
+                newstr+=word.charAt(0).toUpperCase()+word.substr(1);     /*  将一个字符串首字母大写后拼接首字母后的字母 */
+                console.log(newstr);
+            }
+            return newstr;
+        }       
+        var camelFormat=camelback("get-element-by-id");
+    </script>
+</body>
+</html>

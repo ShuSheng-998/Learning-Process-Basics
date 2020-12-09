@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量对象和作用域链</title>
+</head>
+<body>
+    <script>
+     /*    变量对象 */
+     var name_1 = 'xm';
+     function fn_1(argument){
+         var sex_1="male";
+         function fn_2(argument){
+            var age_1=18;
+         }
+     }
+      
+     /* (1)全局
+     在全局空间中做主的就是window对象，window.name=name     window.fn()=fn()
+     所有的全局数据都是window对象的属性或方法 */
+      /* (2)局部
+     在函数空间中做主的也有一个变量对象，不过我们看不到也摸不到，是JS自己用的
+     */
+     console.log(window.person)//输出undefined，不会报错
+
+
+     /*    作用域链
+        1.内部的函数可以通过作用域链访问到外部的数据
+            先访问本作用域的，无法访问到再一步一步往上找
+      */
+     var name = "xm";
+     function fn(argument){
+         var name="xh";
+         var sex="male";
+         function fn2(){
+             var name="xhei";
+             var age = 18;
+         }
+     }
+
+    /* 延长作用域链 */
+    var person = {};
+    person.name = "xm";
+    person.sex = "male";
+     var scroe = 4;
+   /*   用with */
+    </script>
+</body>
+</html>

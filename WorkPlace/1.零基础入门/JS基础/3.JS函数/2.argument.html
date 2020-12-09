@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>argument</title>
+</head>
+<body>
+    <script>
+       /*  argument:
+        1. argument只是与数组类似，并不是Array的一个实例。
+        2.用[]语法访问他的每一个元素。
+        3.lenth属性确定传递参数的个数。 
+        */
+        function inner(){
+            console.log(arguments.length);
+            console.log(arguments[0]);
+        }
+        inner(5,10);
+    </script>
+</body>
+</html>

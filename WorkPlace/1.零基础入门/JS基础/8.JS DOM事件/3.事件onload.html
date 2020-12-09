@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         /*                 window.onload=function(){} 
+                1.因为浏览器解析html时是从文档开始一行一行地编译的，
+                  而html某些脚本在head中定义导致提前想通过DOM获取文本节点
+                  的操作引用上空元素
+                2.window.onload=function(){} 是在执行到这条语句时，
+                转而去执行后面的脚本和html，在最后html和其他没定义onload的脚本加载完后，
+                再执行      
+                3.unload页面卸载时触发         
+         */
+        window.onload=function(){
+            var box=document.getElementById("box");
+            console.log(box);
+            var clicked=function(){
+                alert("我被点了");
+            }
+            box.onclick=clicked;
+        }
+    </script>
+</head>
+<body>
+    <div id="box">这是一个div</div>
+</body>
+</html>

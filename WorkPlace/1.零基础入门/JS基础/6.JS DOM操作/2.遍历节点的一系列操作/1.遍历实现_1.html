@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历实现1</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function(){
+            var Ohtml=document.documentElement; /* documentElement可返回文档的根节点 */
+
+            console.log(Ohtml.tagName);        /*  tagName返回元素的标签名 */
+
+            var Ohead=Ohtml.firstChild;
+            /* var Ohead=Ohtml.childNodes[0]; 或者 Ohtml.childNodes.item(0)*/
+
+            var Obody=Ohtml.childNodes[1];
+            console.log(Ohead.tagName);
+
+            console.log(Ohead.parentNode==Ohtml);               /* 获取父节点 */
+            console.log(Obody.previousSibling==Ohead);          /* 获取前节点 */
+            console.log(Ohead.nextSibling==Obody);              /* 获取前节点 */
+
+            var p=document.getElementById("paragraph");
+            console.log(p.ownerDocument==document);            /*  通过子节点直接找到文档节点 */
+
+            console.log(p.hasChildNodes());                /*  判断是否拥有子节点 */
+        })
+    </script>
+</head><body>
+    <p id="paragraph">文本叶子节点</p>
+</body>
+</html>

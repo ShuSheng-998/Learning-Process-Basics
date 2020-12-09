@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttributes</title>
+    <script src="./js/domReady.js"></script>
+    <script>
+        /*              setAttributes的特点
+            1.getAttribute(属性名，属性值)设置某个自定义属性或固有属性的值
+            2.属性名最后都会被转化为小写(不区分大小写)
+            3.如果没有这个属性，则会创建一个这样的属性并赋给他
+        */
+        myReady(function () {
+        var div=document.getElementById("div0");
+        div.setAttribute("xxx","a");
+        div.setAttribute("data-event","click"); 
+        });
+    </script>
+</head>
+<body>
+    <div id="div0" url="http://www.baidu.com" xxx="aaa" Yyy="bbb" qqq="ccc" style="color: #abcdef;"
+    onclick="alert(0)"></div>
+</body>
+</html>

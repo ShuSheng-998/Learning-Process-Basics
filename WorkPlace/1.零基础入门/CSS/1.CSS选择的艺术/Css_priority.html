@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器优先级</title>
+    <style type="text/css">
+        div{color:red}
+        #idgreen{color:green}
+        .ClassBlue{color:blue}
+        .ClassYellow{color:rgb(173, 173, 50)}
+        div{color:gray}
+    </style>
+</head>
+<body>
+    <p>单独使用</p>
+    <div>使用标签选择器样式</div>
+    <div id="idgreen">使用ID样式</div>
+    <div class="ClassYellow">使用Class样式</div>
+    <!--ID选择器大于标签选择器，class选择器大于标签选择器-->
+    <br/>
+
+    <p>同一个标签引用标签选择器、ID选择器和类选择器</p>
+    <div id="idgreen" class="ClassYellow">CSS选择器优先级，同时使用标签选择器、ID选择器和类选择器</div>
+    <div class="ClassYellow" id="idgreen">CSS选择器优先级，同时使用标签选择器、ID选择器和类选择器</div>
+    <!--ID选择器大于类选择器-->
+    <br/>
+
+    <p>同一个标签引用多个类选择器</p>
+    <div class="ClassBlue" class="ClassYellow">蓝class在前，黄class在后</div>
+    <div class="ClassYellow" class="ClassBlue">黄class在前，蓝class在后</div>
+    <br/>
+
+    <p>同一个元素引用多个标签属性</p>
+    <div>CSS选择器优先级</div>
+    <!--就近原则，选择最后顶底的标签属性-->
+
+
+    <!--对某一标签同时使用多个选择器属性，权重越高优先级越高，权重=包含其中的选择器的权值相加，ID选择器为100，类选择器为10，标签为1-->
+    <!--Important优先级最高-->
+</body>
+</html>

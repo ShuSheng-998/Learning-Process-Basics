@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        myReady(function () {
+          var myDiv=document.getElementById("myDiv");   /* 1.可以不用document，用已获得的元素 */
+
+          var ulTest=myDiv.getElementsByTagName("ul");
+          var ul=myDiv.querySelector("#myUl");
+          var ul2=myDiv.querySelector("#myUl");
+          var li=myDiv.querySelector("li:last-child");
+          var els=document.querySelector("input,li"); /*2.并不会返回多个元素，找到第一个input就会返回 */
+
+          var span=document.querySelector("span")       /*3.未找到时返回空 */
+
+          var input=document.querySelector(".foo\\:bar")     /*4.通过class的值获得一个对象,":"为非法字符，用"\\"转义字符说明 */
+        
+          var list=document.querySelectorAll("li");     /* 返回的是一个集合,返回的是一个静态的Nodelist，staticNodelist,不会动态改变*/
+          console.log(ul); 
+          console.log(ul2);
+          console.log(li);
+          console.log(input);
+          console.log(list);
+        });
+    </script>
+</head>
+<body>
+    <input type="text" class="foo:bar" value="请输入内容">
+    <div id="myDiv">
+        you are my Sunshine.
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <style>
+        .block{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            line-height: 100px;
+            text-align: center;
+            border: 2px solid #eeccec;
+            float: left;
+            top:0px;
+            left:0px;
+           /*  z-index: 9; */       /* 控制层叠顺序 */
+        }
+        .block:nth-child(2){
+            position: relative;         /* 本该所在常规流不会消失，仍会存在 */
+            top:0px;
+
+            left:10px;           /* 相对于自己在常规流中原来的位置向左偏移10像素 */
+           
+            /* left:-80px; */                 /* 控制层叠顺序 */
+            
+            border-color: red;  
+            float: left;            /* 可以使浮动元素发生偏移 */
+
+            /* z-index: 1;  */          /* 控制层叠顺序 */
+        }
+    </style>
+</head>
+<body>
+    <div class="block">A</div>
+    <div class="block">B</div>
+    <!-- <div class="block">C</div> -->
+</body>
+</html>

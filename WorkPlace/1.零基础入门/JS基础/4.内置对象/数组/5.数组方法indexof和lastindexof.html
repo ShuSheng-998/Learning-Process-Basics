@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexof</title>
+</head>
+
+<body>
+    <script>
+        /* indexOf()
+            语法:arryObject.indexOf(searchvalue,statIndex)
+            功能:从数组的startIndex开始向后查找与searchvalue完全相等的值
+            参数:searchvalue(必须),要查找的项；
+                 startIndex(可选)，起点的索引；
+            返回值:查找的项在数组中的位置，未找到的情况下返回-1；
+         */
+
+        var nums = [1, 7, 5, 7, 8, 1, 6, 9];
+        var pos = nums.indexOf(7, 0);
+        console.log(pos);
+
+        /* lastindexOf()
+           语法:arryObject.lastindexOf(searchvalue,statIndex)
+           功能:从数组的startIndex开始向前查找与searchvalue完全相等的值
+           参数:searchvalue(必须),要查找的项；
+                startIndex(可选)，起点的索引；
+           返回值:查找的项在数组中的位置，未找到的情况下返回-1；
+        */
+        var pos2 = nums.lastIndexOf(1, 7);
+        console.log(pos2);
+
+        /*  封装一个方法实现indexof的功能 */
+        function ArryIndexof(arr, value) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] === value) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        var num2 = ArryIndexof(nums, 7);
+        console.log(num2);
+    </script>
+</body>
+
+</html>

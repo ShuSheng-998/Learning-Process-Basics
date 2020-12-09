@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨浏览器事件处理程序</title>
+</head>
+<body>
+    <button id="btn">点击我</button>
+    <script>
+        //兼容所有浏览器    主流浏览器、IE8以下
+        var EventUtil={
+            addHandler:function(element,type,handler){
+                //绑定事件
+                //chrome、firfox、IE9       addEventListener
+                //IE8及以下                 attachEvent
+                if(element.addEventListener){
+                    element.addEventListener(type,handler,false);
+                }else if(element.attachEvent){
+                    element.attachEvent("on"+type,handler);
+                }else{
+                    element["on"+type]=null;
+                }
+            },
+            removeHandler:function(element,type,handler){
+                //移除事件
+                 //chrome、firfox、IE9       removeEventListener
+                //IE8及以下                 detachEvent
+                if(element.removeEventListener){
+                    element.removeEventListener(type,handler,false);
+                }else if(element.detachEvent){
+                    element.detachEvent("on"+type,handler);
+                }else{
+                    element["on"+type]=null;
+                }
+            }
+        }
+
+        //测试代码
+        var btn=document.getElementById("btn");
+        var handler=function(){
+            alert("被点了");
+        }
+        EventUtil.addHandler(btn,"click",handler);
+        EventUtil.removeHandler(btn,"click",handler);
+    </script>
+</body>
+</html>

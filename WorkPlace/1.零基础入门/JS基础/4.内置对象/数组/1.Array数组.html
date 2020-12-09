@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array数组</title>
+</head>
+<body>
+    <script>
+        var colors=new Array(3);                        /*  预先知道数组要保存的项目数量 */
+        var nums=new Array(1,3,4,2,5);                 /*  向Array构造函数中传递数组应包含的量 */
+        var colors_1=["red", "yellow","blue"];           
+        var infos=[6,"LBW",true,{email:"LBWNB@WDNMD.com"}]; 
+        console.log(infos);
+
+
+        var arr=["a","b","c","d"];
+        arr.length=3;                      /*  减少或增加lenth值可移除或添加值 */
+        console.log(arr);
+        arr[99]="z";        /* 改变后，length=100 */
+    </script>
+</body>
+</html>

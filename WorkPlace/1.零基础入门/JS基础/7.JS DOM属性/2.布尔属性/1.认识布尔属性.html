@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttributes</title>
+    <script src="../js/domReady.js"></script>
+    <script>
+        /*              checked固有属性的特点
+            1.Element.checked()
+            2.true或者checked(任何字符串)都可以，因为有自动的类型转换,值为""或者null时为假
+            3.removeAttribute对checked无操作，无作用
+        */
+        myReady(function () {
+            var input=document.querySelectorAll("input");
+            input[0].checked=true;          /*true或者checked(任何字符串)都可以，因为有自动的类型转换 */
+        });
+    </script>
+</head>
+<body>
+    你去过的城市    </br>
+    <input type="checkbox">北京
+    <input type="checkbox" checked="checked">香港
+    <input type="checkbox" checked>纽约
+</body>
+</html>

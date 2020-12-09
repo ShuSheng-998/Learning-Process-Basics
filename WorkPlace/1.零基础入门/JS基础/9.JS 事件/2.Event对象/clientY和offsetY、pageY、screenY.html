@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clientX和offsetX、pageY、screenY</title>
+    <style>
+        #gaodu{
+            height: 2000px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="height" id="gaodu"></div>
+    <SCript>
+        var gaodu=document.getElementById("gaodu");
+        //clientY是指浏览器视口顶部到鼠标的位置
+        //pageY是指网页页面顶部到鼠标的位置
+        //screenY是指显示器屏幕顶部到鼠标位置的Y轴距离
+        gaodu.addEventListener("click",function(event){
+            console.log("clientY:"+event.clientY+";pageY:"+event.pageY+";screen:"+event.screenY);
+        })
+    </SCript>
+</body>
+</html>

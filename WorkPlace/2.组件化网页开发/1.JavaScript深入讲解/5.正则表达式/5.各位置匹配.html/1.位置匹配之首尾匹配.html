@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位置匹配之首尾匹配</title>
+</head>
+<body>
+    <script>
+    /* 指定匹配位置 */
+        var str = "html js";
+       /*  1.首匹配 ：^ */
+        //必须以j开头,否则匹配不到(取反是字符类里的[^js]，值除了js以外的字符都可以匹配)
+        var pattern = /^js/;
+        console.log(pattern.exec(str));
+
+        /*  2.尾匹配 ：$ */
+        //必须以s结尾,否则匹配不到
+        var str_2 = "html ajs";
+        var pattern_2 = /js$/;
+        console.log(pattern_2.exec(str_2));
+
+     /*例子 如果有不是数字，则输出不全是数字*/
+        var str_3 ="110119120";
+        var pattern_3 = /^\d+$/;//  \d+是一个整体，即多个数字，以多个数字的这样一个整体开头和结尾
+
+       /*  var pattern_3 = /\D/         另一种理解方式，\D,除了数字外的所有字符 */
+
+        if(pattern_3.test(str_3)){
+            console.log("全是数字");
+        }else{
+            console.log("不全是数字");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alertWindow()">点击你爷</button>
+    <script>
+        /***
+           * 1.事件对象  html元素，如button、text、select等
+           * 2.给事件对象绑定一个事件类型
+           * 3.事件句柄(用函数实现)
+                (1)var btn=document.getElementId("btn")  取DOM对象
+                (2)btn.onlick=function(){},用匿名函数直接定义
+                (3)btn.onclick=alertWindow,用函数名代替，然后在script中定义具体得函数function alertWindow(){}
+        ***/
+        function alertWindow(){
+            alert("爷被点了");
+        }
+    </script>
+</body>
+</html>

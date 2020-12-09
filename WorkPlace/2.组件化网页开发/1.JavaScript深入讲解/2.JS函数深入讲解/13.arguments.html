@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* arguments是一个类数组对象 
+            如：
+                {
+                    '0':1
+                    '1':2
+                    '2':3
+                    length:3
+                    callee指向函数本身
+                }
+            2.arguments.callee指向函数本身，即函数名
+                (1)用于递归函数
+                    如：return num*arguments.callee(num-1)
+                (2)typeof是个function
+            3.在严格模式下("use strict")
+                var jiecheng=function fn(){
+                    if(num<=1) return 1;
+                    return num*fn(num-1); 
+                }
+        */
+       /*  4.解决参数不等的情况 */ 
+       function add(num1,num2){
+           if(arguments.length!=add.length) throw new Error("请传入"+add.length+"个参数!");
+           return num1+num2;
+       }
+       console.log(add(1,2));
+       console.log(add(1));
+    </script>
+</body>
+</html>

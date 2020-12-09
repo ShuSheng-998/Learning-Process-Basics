@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    *{padding: 0px;margin: 0px;}
+/*     .warp{
+        height: 400px;
+        width: 100%;
+        border:blue 1px solid;                  单行文字的居中对齐
+        line-height:400px;
+        text-align: center;
+    } */
+
+    .warp{
+        height: 400px;
+        width: 100%;
+        border: 1px solid blue; 
+        display: table;        /*  表格展示 */
+    }
+    .content{vertical-align: middle;
+             display: table-cell;           /* 表格下单元格展示 */
+             text-align: center;        
+    }
+    </style>
+</head>
+<body>
+   <!--  <div class="warp">
+        <p>Welcome to WDNMD.COM</p>             单行文字的居中对齐
+    </div> -->
+    <div class="warp">
+        <div class="content">
+            <img src="logo.jpg"/>
+            <h1>Welcome to WDNMD.com</h1>
+            <h1>CSS层叠样式，用于网页样式设计，使网页更美观</h1>
+        </div>
+    </div>
+</body>
+</html>

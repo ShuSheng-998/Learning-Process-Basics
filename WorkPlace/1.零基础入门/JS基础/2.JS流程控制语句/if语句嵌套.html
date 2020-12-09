@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if语句嵌套</title>
+</head>
+<body>
+    <script>
+        var password=prompt("输入密码");
+        if(password.length!=6){
+            alert("请输入六位数字密码");
+        }else{
+            if(isNaN(password)){
+                alert("密码包含非数字");
+            }else{
+                alert("密码设置正确");
+            }
+        }
+    </script>
+</body>
+</html>

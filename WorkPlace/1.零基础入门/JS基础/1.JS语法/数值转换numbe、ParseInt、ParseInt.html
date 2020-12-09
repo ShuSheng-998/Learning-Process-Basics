@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数值转换</title>
+</head>
+<body>
+    <script>
+        var name;                
+        name="卢本伟"
+        var age=26;
+        var email="LBW@sina.com.cn";
+        var adress;  
+        var id="16"
+        id=Number(id);
+        name=Number(name);
+        console.log(typeof id);
+        console.log(typeof name);
+
+        var topvalue=parseInt("28px");  /* parseInt和parsefloat用于把字符串转换为数值
+                                           1.提取的内容必须以数值开头，不然会转换为NaN,会忽略字符产前的空格，直至找到第一个非空格
+                                           2.转换空字符串时返回NaN,NaN属于number
+                                           3.还提供第二个参数：转换时使用的基数（即转换为如进制）   parseInt("0xf",16)
+                                           4.忽略无效数字，如0123，提取的只有123
+                                         */
+        console.log((topvalue));
+
+        var d=parseFloat("12.34.56px")  /* 从第一个非空字符开始，只认第一个小数点 */
+         console.log(d)
+    </script>
+</body>
+</html>

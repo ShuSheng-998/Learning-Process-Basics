@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .block{
+            position: static;       /* 静态布局，一行行，一列列地布局，跟不设置一样地感觉 */
+            width: 100px;
+            height: 100px;
+            top:20px;
+            line-height: 100px;
+            text-align: center;
+            border:2px solid blue;
+            box-sizing: border-box;       /*   让浏览器明白我们的margin、padding宽度包含在width里 */
+        }
+        .block:nth-child(1){
+            border: 2px solid blue;     
+            margin:0px auto;        
+        }                           /* 具有固定width和height的元素，如果把左右外边距设置为auto，则左右外边距会自动扩大占满
+        剩余宽度，造成的效果就是这个元素水平居中了 */
+
+        .block:nth-child(2){
+            /* :nth-child(2)这个 CSS 伪类首先找到所有当前元素的兄弟元素，
+            然后按照位置先后顺序从1开始排序，
+            选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合 */
+            border:2px solid red;
+            position:static;
+            margin:10px;                       /*  如果两个相邻地元素都设置了外边距，最中外边距取两者中最大值 */
+        }
+    </style>
+</head>
+<body>
+    <div class="block">A</div>
+    <div class="block">B</div>
+    <div class="block">C</div>
+    <div class="block">D</div>
+</body>
+</html>

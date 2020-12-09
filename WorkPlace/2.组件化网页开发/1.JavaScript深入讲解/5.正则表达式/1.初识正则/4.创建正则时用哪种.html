@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建正则时用哪种</title>
+</head>
+<body>
+    <script>
+        /* 1.new RegExp 可以随时改变正则的模式(要匹配的字符串)
+            **因为可能是用户要查找对应的字符串
+        */
+        var str="i LOve JS";
+        var userInput="love";
+        var pattern = new RegExp(userInput,"i");/* userInput是变量可改变 */
+        console.log(pattern.test(str));
+    </script>
+</body>
+</html>

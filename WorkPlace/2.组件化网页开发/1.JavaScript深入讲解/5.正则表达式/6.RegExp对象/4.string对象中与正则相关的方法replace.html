@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string对象中与正则相关的方法replace</title>
+</head>
+<body>
+    <script>
+        /* 全局替换g+replace */
+        var str = "i love js js ";
+        var pattern = /js/g;
+        console.log(str.replace(pattern,"html"));
+
+        var str_2 = "1111-111-11-1";
+        var pattern_2 = /-/g;
+        console.log(str_2.replace(pattern_2,"."));
+
+        var str_3 = "i love js";
+        var pattern_3 = /(js)/;
+        document.write(str_3.replace(pattern_3,"<strong style='color:red'>$1</strong>"));//$1是对第一个分组的引用，在正则内部引用时是\1
+          
+        /* 敏感词匹配并改变 */
+        var str_4 = "卢本伟牛逼，卢本伟牛逼，卢本伟牛逼，从现在开始这里叫做卢本伟广场。尼玛个逼";
+        var pattern_4 = /卢本伟|尼玛|逼/g;
+        console.log(str_4.replace(pattern_4,function($0){//$0对最外层分组的引用
+            var result = "";
+            for(var i=0;i<$0.length;i++){
+                result+="*";
+            }
+            return result;
+        }))
+    </script>
+</body>
+</html>

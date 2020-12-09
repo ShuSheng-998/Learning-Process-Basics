@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string对象中与正则相关的方法</title>
+</head>
+<body>
+    <script>
+    /* 1.string.search方法 
+            返回值：返回匹配的正则的字符串的第一个字符的index，未匹配到时返回-1
+    */
+        var str = "html js";
+        var pattern = /js/;
+        console.log(str.search(pattern));
+    /* 1.string.match方法 
+            (1)功能与exec方法大体相同
+            (2)区别：全局匹配一次性返回所有匹配到的字符
+            (3)行尾$配合g和m(多行匹配)，达到匹配多行的行尾的效果
+            (4)行首^配合g和m(多行匹配)，达到匹配多行的行首的效果
+    */
+        var str_2="js js js";
+        var pattern_2 = /js/;
+        console.log(str_2.match(pattern_2));
+
+        var str_3="1.js\n2.js\n3.js";
+        var pattern_3=/js$/gm;
+        console.log(str_3.match(pattern_3));
+    /* 1.string.split方法 
+            返回值：分割字符串
+    */
+        var str ="html,  js  , css";
+        var pattern_4 = /\s*,\s*/;
+        console.log(str.split(pattern_4));
+    </script>
+</body>
+</html>
